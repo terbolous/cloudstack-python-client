@@ -228,6 +228,27 @@ class Client(BaseClient):
             raise RuntimeError("Missing required argument 'id'")
 
         return self.request('updateNetwork', args)
+
+    def listNetworkACLs(self, args={}):
+        '''
+        args - A dictionary. The following are options for keys:
+            id - Lists network ACL with the specified ID
+            account - List resources by account. Must be used with the 
+                domainId parameter.
+            domainid - list only resources belonging to the domain specified
+            isrecursive - defaults to false, but if true, lists all resources from 
+                the parent specified by the domainId till leaves
+            keyword - List by keyword
+            listall	- If set to false, list only resources belonging to the command's
+                caller; if set to true - list resources that the caller is authorized to see.
+                Default value is false
+            networkid - list network ACLs by network Id
+            projectid - list objects by project
+            tags - List resources by tags (key/value pairs)
+            traffictype - list network ACLs by traffic type - Ingress or Egress
+        '''
+
+        return self.request('listNetworkACLs', args)
  
 
     def createPhysicalNetwork(self, args={}):
