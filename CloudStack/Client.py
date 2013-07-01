@@ -922,7 +922,40 @@ class Client(BaseClient):
         '''
 
         return self.request('listNetscalerLoadBalancers', args)
- 
+
+    def listVPCs(self,args={}):
+        '''
+        lists Virtual Private Clouds (VPCs) configured
+
+        args - A dictionary. The following are options for keys:
+            account - list by account associated with the VPC. Must be used 
+                with the domainId parameter.
+            account - List resources by account. Must be used with the domainId parameter.
+            cidr - list by cidr of the VPC. All VPC guest networks' cidrs should be within this CIDR
+            displaytext - List by display text of the VPC
+            domainid - list by domain ID associated with the VPC. If used with the account 
+                parameter returns the VPC associated with the account for the specified domain.
+            domainid - list only resources belonging to the domain specified
+            id - list VPC by id	false
+            isrecursive - defaults to false, but if true, lists all resources from the parent
+                specified by the domainId till leaves.
+            keyword - List by keyword
+            listall - If set to false, list only resources belonging to the command's caller;
+                if set to true - list resources that the caller is authorized to see. Default
+                value is false
+            name - list by name of the VPC
+            page -
+            pagesize - 
+            projectid - list objects by project	
+            restartrequired - list VPCs by restartRequired option
+            state - list VPCs by state
+            supportedservices - list VPC supporting certain services
+            tags - List resources by tags (key/value pairs)
+            vpcofferingid - list by ID of the VPC offering
+            zoneid - list by zone
+        '''
+
+        return self.request('listVPCs',args)
 
     def deployVirtualMachine(self, args={}):
         '''
