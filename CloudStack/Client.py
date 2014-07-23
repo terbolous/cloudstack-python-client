@@ -3484,6 +3484,40 @@ class Client(BaseClient):
             raise RuntimeError("Missing required argument 'volumeid'")
 
         return self.request('createSnapshot', args)
+
+
+
+    def createVmSnapshot(self, args={}):
+        '''
+        Creates an instant snapshot of a volume.
+
+        args - A dictionary. The following are options for keys:
+            volumeid - The ID of the disk volume
+            account - The account of the snapshot. The account parameter must be used
+               with the domainId parameter.
+            domainid - The domain ID of the snapshot. If used with the account
+               parameter, specifies a domain for the account associated with the disk volume.
+            policyid - policy id of the snapshot, if this is null, then use
+               MANUAL_POLICY.
+        '''
+        if not 'id' in args:
+            raise RuntimeError("Missing required argument 'volumeid'")
+
+        return self.request('createVMSnapshot', args)
+
+
+
+
+
+
+
+
+
+
+
+
+
+
  
 
     def listSnapshots(self, args={}):
