@@ -228,27 +228,6 @@ class Client(BaseClient):
             raise RuntimeError("Missing required argument 'id'")
 
         return self.request('updateNetwork', args)
-
-    def listNetworkACLs(self, args={}):
-        '''
-        args - A dictionary. The following are options for keys:
-            id - Lists network ACL with the specified ID
-            account - List resources by account. Must be used with the 
-                domainId parameter.
-            domainid - list only resources belonging to the domain specified
-            isrecursive - defaults to false, but if true, lists all resources from 
-                the parent specified by the domainId till leaves
-            keyword - List by keyword
-            listall	- If set to false, list only resources belonging to the command's
-                caller; if set to true - list resources that the caller is authorized to see.
-                Default value is false
-            networkid - list network ACLs by network Id
-            projectid - list objects by project
-            tags - List resources by tags (key/value pairs)
-            traffictype - list network ACLs by traffic type - Ingress or Egress
-        '''
-
-        return self.request('listNetworkACLs', args)
  
 
     def createPhysicalNetwork(self, args={}):
@@ -578,38 +557,7 @@ class Client(BaseClient):
             raise RuntimeError("Missing required argument 'lbdeviceid'")
 
         return self.request('listNetscalerLoadBalancerNetworks', args)
-
-    def createLoadBalancer(self, args={}):
-        '''
-        Create a load-balancer instance
-        args - A dictionary. The following are options for keys:
-            algorithm - load balancer algorithm (source, roundrobin, leastconn)
-            name - name of the load balancer rule
-            instanceport - the TCP port of the virtual machine where the network traffic will be load balanced to
-            networkid - The guest network the Load Balancer will be created for
-            scheme - the load balancer scheme. Supported value in this release is Internal
-            sourceipaddressnetworkid - the network id of the source ip address
-            sourceport - the source port the network traffic will be load balanced from
-            description - (optional) the description of the Load Balancer
-            sourceipaddress - (optional) the source ip address the network traffic will be load balanced from
-        '''
-
-        if not 'algorithm' in args:
-            raise RuntimeError("Missing required argument 'algorithm'")
-        if not 'name' in args:
-            raise RuntimeError("Missing required argument 'name'")
-        if not 'instanceport' in args:
-            raise RuntimeError("Missing required argument 'instanceport'")
-        if not 'networkid' in args:
-            raise RuntimeError("Missing required argument 'networkid'")
-        if not 'scheme' in args:
-            raise RuntimeError("Missing required argument 'scheme'")
-        if not 'sourceipaddressnetworkid' in args:
-            raise RuntimeError("Missing required argument 'sourceipaddressnetworkid'")
-        if not 'sourceport' in args:
-            raise RuntimeError("Missing required argument 'sourceport'")
-
-        return self.request('createLoadBalancer', args)
+ 
 
     def createLoadBalancerRule(self, args={}):
         '''
@@ -953,40 +901,7 @@ class Client(BaseClient):
         '''
 
         return self.request('listNetscalerLoadBalancers', args)
-
-    def listVPCs(self,args={}):
-        '''
-        lists Virtual Private Clouds (VPCs) configured
-
-        args - A dictionary. The following are options for keys:
-            account - list by account associated with the VPC. Must be used 
-                with the domainId parameter.
-            account - List resources by account. Must be used with the domainId parameter.
-            cidr - list by cidr of the VPC. All VPC guest networks' cidrs should be within this CIDR
-            displaytext - List by display text of the VPC
-            domainid - list by domain ID associated with the VPC. If used with the account 
-                parameter returns the VPC associated with the account for the specified domain.
-            domainid - list only resources belonging to the domain specified
-            id - list VPC by id	false
-            isrecursive - defaults to false, but if true, lists all resources from the parent
-                specified by the domainId till leaves.
-            keyword - List by keyword
-            listall - If set to false, list only resources belonging to the command's caller;
-                if set to true - list resources that the caller is authorized to see. Default
-                value is false
-            name - list by name of the VPC
-            page -
-            pagesize - 
-            projectid - list objects by project	
-            restartrequired - list VPCs by restartRequired option
-            state - list VPCs by state
-            supportedservices - list VPC supporting certain services
-            tags - List resources by tags (key/value pairs)
-            vpcofferingid - list by ID of the VPC offering
-            zoneid - list by zone
-        '''
-
-        return self.request('listVPCs',args)
+ 
 
     def deployVirtualMachine(self, args={}):
         '''
@@ -5276,61 +5191,5 @@ class Client(BaseClient):
         '''
 
         return self.request('listAlerts', args)
-
-    def createTags(self, args={}):
-        '''
-	Creates resource tag(s)
  
-        args - A dictionary. The following are options for keys:
-		resourceids - list of resources to create the tags for
-		resourcetype - type of the resource
-		tags - Map of tags (key/value pairs) RE: tags[0].value, tags[0].key
-		customer - identifies client specific tag. When the value is not null, the tag can't be used by cloudStack code internally. optional
-        '''
-        if not 'resourceIds' in args:
-            raise RuntimeError("Missing required argument 'resourceIds'")
-        if not 'resourceType' in args:
-            raise RuntimeError("Missing required argument 'resourceType'")
-        if not 'tags[0].key' in args:
-            raise RuntimeError("Missing required argument 'tags[0].key'")
-        if not 'tags[0].value' in args:
-            raise RuntimeError("Missing required argument 'tags[0].value'")
 
-        return self.request('createTags', args)
-
-    def listTags(self, args={}):
-        '''
-	List resource tag(s)
-
-        args - A dictionary. The following are options for keys:
-		accountList  - resources by account. Must be used with the domainId parameter. Optional
-		customer - list by customer name. Optional
-		domainid - list only resources belonging to the domain specified. Optional
-		isrecursive - defaults to false, but if true, lists all resources from the parent specified by the domainId till leaves. Optional
-		key - list by key. Optional
-		keyword - List by keyword. Optional
-		listall - If set to false, list only resources belonging to the command's caller; if set to true - list resources that the caller is authorized to see. Default value is false. Optional
-		page - Optional
-		pagesize - Optional
-		projectid - list objects by project. Optional
-		resourceid - list by resource id. Optional
-		resourcetype - list by resource type. Optional
-		value - list by value. Optional
-        '''
-        return self.request('listTags', args)
-
-    def deleteTags(self, args={}):
-        '''
-        Delete resource tag(s)
-
-        args - A dictionary. The following are options for keys:
-                resourceids - list of resources to create the tags for
-                resourcetype - type of the resource
-                tags - Map of tags (key/value pairs). Optional
-        '''
-        if not 'resourceIds' in args:
-            raise RuntimeError("Missing required argument 'resourceIds'")
-        if not 'resourceType' in args:
-            raise RuntimeError("Missing required argument 'resourceType'")
-
-        return self.request('deleteTags', args)

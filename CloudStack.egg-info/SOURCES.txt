@@ -1,0 +1,9 @@
+setup.py
+CloudStack/BaseClient.py
+CloudStack/Client.py
+CloudStack/ExtendedClient.py
+CloudStack/__init__.py
+CloudStack.egg-info/PKG-INFO
+CloudStack.egg-info/SOURCES.txt
+CloudStack.egg-info/dependency_links.txt
+CloudStack.egg-info/top_level.txt

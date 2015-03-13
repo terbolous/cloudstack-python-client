@@ -6,6 +6,9 @@ api = 'http://example.com:8080/client/api'
 apikey = 'API KEY'
 secret = 'API SECRET'
 
+
+
+
 cloudstack = CloudStack.Client(api, apikey, secret)
 
 job = cloudstack.deployVirtualMachine({
