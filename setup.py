@@ -28,12 +28,12 @@ except ImportError:
 
 setup(
     name             = 'CloudStack',
-    version          = '0.1',
+    version          = '3.0.0.1',
     description      = "CloudStack API v2.2 Client",
     long_description = "Python interface CloudStack v2.2 API",
     author           = "Jason Hancock",
     author_email     = "jsnbyh@gmail.com",
-    url              = "https://github.com/jasonhancock/cloudstack-python-client",
+    url              = "https://github.com/larstobi/cloudstack-python-client",
     packages         = [ 'CloudStack' ],
     license          = 'MIT',
     platforms        = 'Posix; MacOS X; Windows',
