@@ -42,7 +42,7 @@ class BaseClient(object):
             if len(error_data) == 1:
                 error_msg = 'ERROR: %s - %s' % (error_data.keys()[0],error_data[error_data.keys()[0]]['errortext'])
             else:
-                error_msg = 'ERROR: Recieved muliaple errors.'
+                error_msg = 'ERROR: Recieved multiple errors.'
             raise RuntimeError(error_msg)
 
         decoded = json.loads(response.read())
