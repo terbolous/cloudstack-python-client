@@ -39,7 +39,7 @@ class Client(BaseClient):
             raise RuntimeError("Missing required argument 'traffictype'")
 
         return self.request('createNetworkOffering', args)
- 
+
 
     def updateNetworkOffering(self, args={}):
         '''
@@ -57,7 +57,7 @@ class Client(BaseClient):
         '''
 
         return self.request('updateNetworkOffering', args)
- 
+
 
     def deleteNetworkOffering(self, args={}):
         '''
@@ -70,7 +70,7 @@ class Client(BaseClient):
             raise RuntimeError("Missing required argument 'id'")
 
         return self.request('deleteNetworkOffering', args)
- 
+
 
     def listNetworkOfferings(self, args={}):
         '''
@@ -89,8 +89,8 @@ class Client(BaseClient):
             name - list network offerings by name
             networkid - the ID of the network. Pass this in if you want to see the
                available network offering that a network can be changed to.
-            page - 
-            pagesize - 
+            page -
+            pagesize -
             sourcenatsupported - true if need to list only netwok offerings where source
                nat is supported, false otherwise
             specifyipranges - true if need to list only network offerings which support
@@ -106,7 +106,7 @@ class Client(BaseClient):
         '''
 
         return self.request('listNetworkOfferings', args)
- 
+
 
     def createNetwork(self, args={}):
         '''
@@ -146,7 +146,7 @@ class Client(BaseClient):
             raise RuntimeError("Missing required argument 'zoneid'")
 
         return self.request('createNetwork', args)
- 
+
 
     def deleteNetwork(self, args={}):
         '''
@@ -159,7 +159,7 @@ class Client(BaseClient):
             raise RuntimeError("Missing required argument 'id'")
 
         return self.request('deleteNetwork', args)
- 
+
 
     def listNetworks(self, args={}):
         '''
@@ -179,8 +179,8 @@ class Client(BaseClient):
             listall - If set to false, list only resources belonging to the command's
                caller; if set to true - list resources that the caller is authorized to see.
                Default value is false
-            page - 
-            pagesize - 
+            page -
+            pagesize -
             physicalnetworkid - list networks by physical network id
             projectid - list firewall rules by project
             restartrequired - list network offerings by restartRequired option
@@ -194,7 +194,7 @@ class Client(BaseClient):
         '''
 
         return self.request('listNetworks', args)
- 
+
 
     def restartNetwork(self, args={}):
         '''
@@ -210,7 +210,7 @@ class Client(BaseClient):
             raise RuntimeError("Missing required argument 'id'")
 
         return self.request('restartNetwork', args)
- 
+
 
     def updateNetwork(self, args={}):
         '''
@@ -233,10 +233,10 @@ class Client(BaseClient):
         '''
         args - A dictionary. The following are options for keys:
             id - Lists network ACL with the specified ID
-            account - List resources by account. Must be used with the 
+            account - List resources by account. Must be used with the
                 domainId parameter.
             domainid - list only resources belonging to the domain specified
-            isrecursive - defaults to false, but if true, lists all resources from 
+            isrecursive - defaults to false, but if true, lists all resources from
                 the parent specified by the domainId till leaves
             keyword - List by keyword
             listall	- If set to false, list only resources belonging to the command's
@@ -249,7 +249,7 @@ class Client(BaseClient):
         '''
 
         return self.request('listNetworkACLs', args)
- 
+
 
     def createPhysicalNetwork(self, args={}):
         '''
@@ -274,7 +274,7 @@ class Client(BaseClient):
             raise RuntimeError("Missing required argument 'zoneid'")
 
         return self.request('createPhysicalNetwork', args)
- 
+
 
     def deletePhysicalNetwork(self, args={}):
         '''
@@ -287,7 +287,7 @@ class Client(BaseClient):
             raise RuntimeError("Missing required argument 'id'")
 
         return self.request('deletePhysicalNetwork', args)
- 
+
 
     def listPhysicalNetworks(self, args={}):
         '''
@@ -297,14 +297,14 @@ class Client(BaseClient):
             id - list physical network by id
             keyword - List by keyword
             name - search by name
-            page - 
-            pagesize - 
+            page -
+            pagesize -
             zoneid - the Zone ID for the physical network
             page - Pagination
         '''
 
         return self.request('listPhysicalNetworks', args)
- 
+
 
     def updatePhysicalNetwork(self, args={}):
         '''
@@ -321,7 +321,7 @@ class Client(BaseClient):
             raise RuntimeError("Missing required argument 'id'")
 
         return self.request('updatePhysicalNetwork', args)
- 
+
 
     def listSupportedNetworkServices(self, args={}):
         '''
@@ -329,15 +329,15 @@ class Client(BaseClient):
 
         args - A dictionary. The following are options for keys:
             keyword - List by keyword
-            page - 
-            pagesize - 
+            page -
+            pagesize -
             provider - network service provider name
             service - network service name to list providers and capabilities of
             page - Pagination
         '''
 
         return self.request('listSupportedNetworkServices', args)
- 
+
 
     def addNetworkServiceProvider(self, args={}):
         '''
@@ -357,7 +357,7 @@ class Client(BaseClient):
             raise RuntimeError("Missing required argument 'physicalnetworkid'")
 
         return self.request('addNetworkServiceProvider', args)
- 
+
 
     def deleteNetworkServiceProvider(self, args={}):
         '''
@@ -370,7 +370,7 @@ class Client(BaseClient):
             raise RuntimeError("Missing required argument 'id'")
 
         return self.request('deleteNetworkServiceProvider', args)
- 
+
 
     def listNetworkServiceProviders(self, args={}):
         '''
@@ -379,15 +379,15 @@ class Client(BaseClient):
         args - A dictionary. The following are options for keys:
             keyword - List by keyword
             name - list providers by name
-            page - 
-            pagesize - 
+            page -
+            pagesize -
             physicalnetworkid - the Physical Network ID
             state - list providers by state
             page - Pagination
         '''
 
         return self.request('listNetworkServiceProviders', args)
- 
+
 
     def updateNetworkServiceProvider(self, args={}):
         '''
@@ -403,7 +403,7 @@ class Client(BaseClient):
             raise RuntimeError("Missing required argument 'id'")
 
         return self.request('updateNetworkServiceProvider', args)
- 
+
 
     def createStorageNetworkIpRange(self, args={}):
         '''
@@ -430,7 +430,7 @@ class Client(BaseClient):
             raise RuntimeError("Missing required argument 'startip'")
 
         return self.request('createStorageNetworkIpRange', args)
- 
+
 
     def deleteStorageNetworkIpRange(self, args={}):
         '''
@@ -443,7 +443,7 @@ class Client(BaseClient):
             raise RuntimeError("Missing required argument 'id'")
 
         return self.request('deleteStorageNetworkIpRange', args)
- 
+
 
     def listStorageNetworkIpRange(self, args={}):
         '''
@@ -453,8 +453,8 @@ class Client(BaseClient):
             id - optional parameter. Storaget network IP range uuid, if specicied, using
                it to search the range.
             keyword - List by keyword
-            page - 
-            pagesize - 
+            page -
+            pagesize -
             podid - optional parameter. Pod uuid, if specicied and range uuid is absent,
                using it to search the range.
             zoneid - optional parameter. Zone uuid, if specicied and both pod uuid and
@@ -463,7 +463,7 @@ class Client(BaseClient):
         '''
 
         return self.request('listStorageNetworkIpRange', args)
- 
+
 
     def updateStorageNetworkIpRange(self, args={}):
         '''
@@ -481,7 +481,7 @@ class Client(BaseClient):
             raise RuntimeError("Missing required argument 'id'")
 
         return self.request('updateStorageNetworkIpRange', args)
- 
+
 
     def addNetworkDevice(self, args={}):
         '''
@@ -496,7 +496,7 @@ class Client(BaseClient):
         '''
 
         return self.request('addNetworkDevice', args)
- 
+
 
     def listNetworkDevice(self, args={}):
         '''
@@ -508,13 +508,13 @@ class Client(BaseClient):
             networkdevicetype - Network device type, now supports ExternalDhcp,
                PxeServer, NetscalerMPXLoadBalancer, NetscalerVPXLoadBalancer,
                NetscalerSDXLoadBalancer, F5BigIpLoadBalancer, JuniperSRXFirewall
-            page - 
-            pagesize - 
+            page -
+            pagesize -
             page - Pagination
         '''
 
         return self.request('listNetworkDevice', args)
- 
+
 
     def deleteNetworkDevice(self, args={}):
         '''
@@ -527,7 +527,7 @@ class Client(BaseClient):
             raise RuntimeError("Missing required argument 'id'")
 
         return self.request('deleteNetworkDevice', args)
- 
+
 
     def listF5LoadBalancerNetworks(self, args={}):
         '''
@@ -536,15 +536,15 @@ class Client(BaseClient):
         args - A dictionary. The following are options for keys:
             lbdeviceid - f5 load balancer device ID
             keyword - List by keyword
-            page - 
-            pagesize - 
+            page -
+            pagesize -
             page - Pagination
         '''
         if not 'lbdeviceid' in args:
             raise RuntimeError("Missing required argument 'lbdeviceid'")
 
         return self.request('listF5LoadBalancerNetworks', args)
- 
+
 
     def listSrxFirewallNetworks(self, args={}):
         '''
@@ -553,15 +553,15 @@ class Client(BaseClient):
         args - A dictionary. The following are options for keys:
             lbdeviceid - netscaler load balancer device ID
             keyword - List by keyword
-            page - 
-            pagesize - 
+            page -
+            pagesize -
             page - Pagination
         '''
         if not 'lbdeviceid' in args:
             raise RuntimeError("Missing required argument 'lbdeviceid'")
 
         return self.request('listSrxFirewallNetworks', args)
- 
+
 
     def listNetscalerLoadBalancerNetworks(self, args={}):
         '''
@@ -570,8 +570,8 @@ class Client(BaseClient):
         args - A dictionary. The following are options for keys:
             lbdeviceid - netscaler load balancer device ID
             keyword - List by keyword
-            page - 
-            pagesize - 
+            page -
+            pagesize -
             page - Pagination
         '''
         if not 'lbdeviceid' in args:
@@ -646,7 +646,7 @@ class Client(BaseClient):
             raise RuntimeError("Missing required argument 'publicport'")
 
         return self.request('createLoadBalancerRule', args)
- 
+
 
     def deleteLoadBalancerRule(self, args={}):
         '''
@@ -659,7 +659,7 @@ class Client(BaseClient):
             raise RuntimeError("Missing required argument 'id'")
 
         return self.request('deleteLoadBalancerRule', args)
- 
+
 
     def removeFromLoadBalancerRule(self, args={}):
         '''
@@ -677,7 +677,7 @@ class Client(BaseClient):
             raise RuntimeError("Missing required argument 'virtualmachineids'")
 
         return self.request('removeFromLoadBalancerRule', args)
- 
+
 
     def assignToLoadBalancerRule(self, args={}):
         '''
@@ -694,7 +694,7 @@ class Client(BaseClient):
             raise RuntimeError("Missing required argument 'virtualmachineids'")
 
         return self.request('assignToLoadBalancerRule', args)
- 
+
 
     def createLBStickinessPolicy(self, args={}):
         '''
@@ -717,7 +717,7 @@ class Client(BaseClient):
             raise RuntimeError("Missing required argument 'name'")
 
         return self.request('createLBStickinessPolicy', args)
- 
+
 
     def deleteLBStickinessPolicy(self, args={}):
         '''
@@ -730,7 +730,7 @@ class Client(BaseClient):
             raise RuntimeError("Missing required argument 'id'")
 
         return self.request('deleteLBStickinessPolicy', args)
- 
+
 
     def listLoadBalancerRules(self, args={}):
         '''
@@ -748,8 +748,8 @@ class Client(BaseClient):
                caller; if set to true - list resources that the caller is authorized to see.
                Default value is false
             name - the name of the load balancer rule
-            page - 
-            pagesize - 
+            page -
+            pagesize -
             projectid - list firewall rules by project
             publicipid - the public IP address id of the load balancer rule
             virtualmachineid - the ID of the virtual machine of the load balancer rule
@@ -758,7 +758,7 @@ class Client(BaseClient):
         '''
 
         return self.request('listLoadBalancerRules', args)
- 
+
 
     def listLBStickinessPolicies(self, args={}):
         '''
@@ -767,15 +767,15 @@ class Client(BaseClient):
         args - A dictionary. The following are options for keys:
             lbruleid - the ID of the load balancer rule
             keyword - List by keyword
-            page - 
-            pagesize - 
+            page -
+            pagesize -
             page - Pagination
         '''
         if not 'lbruleid' in args:
             raise RuntimeError("Missing required argument 'lbruleid'")
 
         return self.request('listLBStickinessPolicies', args)
- 
+
 
     def listLoadBalancerRuleInstances(self, args={}):
         '''
@@ -786,15 +786,15 @@ class Client(BaseClient):
             applied - true if listing all virtual machines currently applied to the load
                balancer rule; default is true
             keyword - List by keyword
-            page - 
-            pagesize - 
+            page -
+            pagesize -
             page - Pagination
         '''
         if not 'id' in args:
             raise RuntimeError("Missing required argument 'id'")
 
         return self.request('listLoadBalancerRuleInstances', args)
- 
+
 
     def updateLoadBalancerRule(self, args={}):
         '''
@@ -810,7 +810,7 @@ class Client(BaseClient):
             raise RuntimeError("Missing required argument 'id'")
 
         return self.request('updateLoadBalancerRule', args)
- 
+
 
     def addF5LoadBalancer(self, args={}):
         '''
@@ -835,7 +835,7 @@ class Client(BaseClient):
             raise RuntimeError("Missing required argument 'username'")
 
         return self.request('addF5LoadBalancer', args)
- 
+
 
     def configureF5LoadBalancer(self, args={}):
         '''
@@ -850,7 +850,7 @@ class Client(BaseClient):
             raise RuntimeError("Missing required argument 'lbdeviceid'")
 
         return self.request('configureF5LoadBalancer', args)
- 
+
 
     def deleteF5LoadBalancer(self, args={}):
         '''
@@ -863,7 +863,7 @@ class Client(BaseClient):
             raise RuntimeError("Missing required argument 'lbdeviceid'")
 
         return self.request('deleteF5LoadBalancer', args)
- 
+
 
     def listF5LoadBalancers(self, args={}):
         '''
@@ -872,14 +872,14 @@ class Client(BaseClient):
         args - A dictionary. The following are options for keys:
             keyword - List by keyword
             lbdeviceid - f5 load balancer device ID
-            page - 
-            pagesize - 
+            page -
+            pagesize -
             physicalnetworkid - the Physical Network ID
             page - Pagination
         '''
 
         return self.request('listF5LoadBalancers', args)
- 
+
 
     def addNetscalerLoadBalancer(self, args={}):
         '''
@@ -905,7 +905,7 @@ class Client(BaseClient):
             raise RuntimeError("Missing required argument 'username'")
 
         return self.request('addNetscalerLoadBalancer', args)
- 
+
 
     def deleteNetscalerLoadBalancer(self, args={}):
         '''
@@ -918,7 +918,7 @@ class Client(BaseClient):
             raise RuntimeError("Missing required argument 'lbdeviceid'")
 
         return self.request('deleteNetscalerLoadBalancer', args)
- 
+
 
     def configureNetscalerLoadBalancer(self, args={}):
         '''
@@ -937,7 +937,7 @@ class Client(BaseClient):
             raise RuntimeError("Missing required argument 'lbdeviceid'")
 
         return self.request('configureNetscalerLoadBalancer', args)
- 
+
 
     def listNetscalerLoadBalancers(self, args={}):
         '''
@@ -946,8 +946,8 @@ class Client(BaseClient):
         args - A dictionary. The following are options for keys:
             keyword - List by keyword
             lbdeviceid - netscaler load balancer device ID
-            page - 
-            pagesize - 
+            page -
+            pagesize -
             physicalnetworkid - the Physical Network ID
             page - Pagination
         '''
@@ -959,12 +959,12 @@ class Client(BaseClient):
         lists Virtual Private Clouds (VPCs) configured
 
         args - A dictionary. The following are options for keys:
-            account - list by account associated with the VPC. Must be used 
+            account - list by account associated with the VPC. Must be used
                 with the domainId parameter.
             account - List resources by account. Must be used with the domainId parameter.
             cidr - list by cidr of the VPC. All VPC guest networks' cidrs should be within this CIDR
             displaytext - List by display text of the VPC
-            domainid - list by domain ID associated with the VPC. If used with the account 
+            domainid - list by domain ID associated with the VPC. If used with the account
                 parameter returns the VPC associated with the account for the specified domain.
             domainid - list only resources belonging to the domain specified
             id - list VPC by id	false
@@ -976,8 +976,8 @@ class Client(BaseClient):
                 value is false
             name - list by name of the VPC
             page -
-            pagesize - 
-            projectid - list objects by project	
+            pagesize -
+            projectid - list objects by project
             restartrequired - list VPCs by restartRequired option
             state - list VPCs by state
             supportedservices - list VPC supporting certain services
@@ -1048,7 +1048,7 @@ class Client(BaseClient):
             raise RuntimeError("Missing required argument 'zoneid'")
 
         return self.request('deployVirtualMachine', args)
- 
+
 
     def destroyVirtualMachine(self, args={}):
         '''
@@ -1062,7 +1062,7 @@ class Client(BaseClient):
             raise RuntimeError("Missing required argument 'id'")
 
         return self.request('destroyVirtualMachine', args)
- 
+
 
     def rebootVirtualMachine(self, args={}):
         '''
@@ -1075,7 +1075,7 @@ class Client(BaseClient):
             raise RuntimeError("Missing required argument 'id'")
 
         return self.request('rebootVirtualMachine', args)
- 
+
 
     def startVirtualMachine(self, args={}):
         '''
@@ -1088,7 +1088,7 @@ class Client(BaseClient):
             raise RuntimeError("Missing required argument 'id'")
 
         return self.request('startVirtualMachine', args)
- 
+
 
     def stopVirtualMachine(self, args={}):
         '''
@@ -1102,7 +1102,7 @@ class Client(BaseClient):
             raise RuntimeError("Missing required argument 'id'")
 
         return self.request('stopVirtualMachine', args)
- 
+
 
     def resetPasswordForVirtualMachine(self, args={}):
         '''
@@ -1117,7 +1117,7 @@ class Client(BaseClient):
             raise RuntimeError("Missing required argument 'id'")
 
         return self.request('resetPasswordForVirtualMachine', args)
- 
+
 
     def changeServiceForVirtualMachine(self, args={}):
         '''
@@ -1134,7 +1134,7 @@ class Client(BaseClient):
             raise RuntimeError("Missing required argument 'serviceofferingid'")
 
         return self.request('changeServiceForVirtualMachine', args)
- 
+
 
     def updateVirtualMachine(self, args={}):
         '''
@@ -1156,7 +1156,7 @@ class Client(BaseClient):
             raise RuntimeError("Missing required argument 'id'")
 
         return self.request('updateVirtualMachine', args)
- 
+
 
     def recoverVirtualMachine(self, args={}):
         '''
@@ -1169,7 +1169,7 @@ class Client(BaseClient):
             raise RuntimeError("Missing required argument 'id'")
 
         return self.request('recoverVirtualMachine', args)
- 
+
 
     def listVirtualMachines(self, args={}):
         '''
@@ -1196,8 +1196,8 @@ class Client(BaseClient):
                Default value is false
             name - name of the virtual machine
             networkid - list by network id
-            page - 
-            pagesize - 
+            page -
+            pagesize -
             podid - the pod ID
             projectid - list firewall rules by project
             state - state of the virtual machine
@@ -1207,7 +1207,7 @@ class Client(BaseClient):
         '''
 
         return self.request('listVirtualMachines', args)
- 
+
 
     def getVMPassword(self, args={}):
         '''
@@ -1220,7 +1220,7 @@ class Client(BaseClient):
             raise RuntimeError("Missing required argument 'id'")
 
         return self.request('getVMPassword', args)
- 
+
 
     def migrateVirtualMachine(self, args={}):
         '''
@@ -1238,7 +1238,7 @@ class Client(BaseClient):
             raise RuntimeError("Missing required argument 'virtualmachineid'")
 
         return self.request('migrateVirtualMachine', args)
- 
+
 
     def assignVirtualMachine(self, args={}):
         '''
@@ -1262,7 +1262,7 @@ class Client(BaseClient):
             raise RuntimeError("Missing required argument 'virtualmachineid'")
 
         return self.request('assignVirtualMachine', args)
- 
+
 
     def restoreVirtualMachine(self, args={}):
         '''
@@ -1275,7 +1275,7 @@ class Client(BaseClient):
             raise RuntimeError("Missing required argument 'virtualmachineid'")
 
         return self.request('restoreVirtualMachine', args)
- 
+
 
     def addTrafficType(self, args={}):
         '''
@@ -1298,7 +1298,7 @@ class Client(BaseClient):
             raise RuntimeError("Missing required argument 'traffictype'")
 
         return self.request('addTrafficType', args)
- 
+
 
     def deleteTrafficType(self, args={}):
         '''
@@ -1311,7 +1311,7 @@ class Client(BaseClient):
             raise RuntimeError("Missing required argument 'id'")
 
         return self.request('deleteTrafficType', args)
- 
+
 
     def listTrafficTypes(self, args={}):
         '''
@@ -1320,15 +1320,15 @@ class Client(BaseClient):
         args - A dictionary. The following are options for keys:
             physicalnetworkid - the Physical Network ID
             keyword - List by keyword
-            page - 
-            pagesize - 
+            page -
+            pagesize -
             page - Pagination
         '''
         if not 'physicalnetworkid' in args:
             raise RuntimeError("Missing required argument 'physicalnetworkid'")
 
         return self.request('listTrafficTypes', args)
- 
+
 
     def updateTrafficType(self, args={}):
         '''
@@ -1347,7 +1347,7 @@ class Client(BaseClient):
             raise RuntimeError("Missing required argument 'id'")
 
         return self.request('updateTrafficType', args)
- 
+
 
     def listTrafficTypeImplementors(self, args={}):
         '''
@@ -1356,15 +1356,15 @@ class Client(BaseClient):
 
         args - A dictionary. The following are options for keys:
             keyword - List by keyword
-            page - 
-            pagesize - 
+            page -
+            pagesize -
             traffictype - Optional. The network traffic type, if specified, return its
                implementor. Otherwise, return all traffic types with their implementor
             page - Pagination
         '''
 
         return self.request('listTrafficTypeImplementors', args)
- 
+
 
     def generateUsageRecords(self, args={}):
         '''
@@ -1384,7 +1384,7 @@ class Client(BaseClient):
             raise RuntimeError("Missing required argument 'startdate'")
 
         return self.request('generateUsageRecords', args)
- 
+
 
     def listUsageRecords(self, args={}):
         '''
@@ -1399,8 +1399,8 @@ class Client(BaseClient):
             accountid - List usage records for the specified account
             domainid - List usage records for the specified domain.
             keyword - List by keyword
-            page - 
-            pagesize - 
+            page -
+            pagesize -
             projectid - List usage records for specified project
             type - List usage records for the specified usage type
             page - Pagination
@@ -1411,7 +1411,7 @@ class Client(BaseClient):
             raise RuntimeError("Missing required argument 'startdate'")
 
         return self.request('listUsageRecords', args)
- 
+
 
     def listUsageTypes(self, args={}):
         '''
@@ -1422,7 +1422,7 @@ class Client(BaseClient):
         '''
 
         return self.request('listUsageTypes', args)
- 
+
 
     def addTrafficMonitor(self, args={}):
         '''
@@ -1438,7 +1438,7 @@ class Client(BaseClient):
             raise RuntimeError("Missing required argument 'zoneid'")
 
         return self.request('addTrafficMonitor', args)
- 
+
 
     def deleteTrafficMonitor(self, args={}):
         '''
@@ -1451,7 +1451,7 @@ class Client(BaseClient):
             raise RuntimeError("Missing required argument 'id'")
 
         return self.request('deleteTrafficMonitor', args)
- 
+
 
     def listTrafficMonitors(self, args={}):
         '''
@@ -1460,15 +1460,15 @@ class Client(BaseClient):
         args - A dictionary. The following are options for keys:
             zoneid - zone Id
             keyword - List by keyword
-            page - 
-            pagesize - 
+            page -
+            pagesize -
             page - Pagination
         '''
         if not 'zoneid' in args:
             raise RuntimeError("Missing required argument 'zoneid'")
 
         return self.request('listTrafficMonitors', args)
- 
+
 
     def attachVolume(self, args={}):
         '''
@@ -1488,7 +1488,7 @@ class Client(BaseClient):
             raise RuntimeError("Missing required argument 'virtualmachineid'")
 
         return self.request('attachVolume', args)
- 
+
 
     def detachVolume(self, args={}):
         '''
@@ -1503,7 +1503,7 @@ class Client(BaseClient):
         '''
 
         return self.request('detachVolume', args)
- 
+
 
     def createVolume(self, args={}):
         '''
@@ -1530,7 +1530,7 @@ class Client(BaseClient):
             raise RuntimeError("Missing required argument 'name'")
 
         return self.request('createVolume', args)
- 
+
 
     def deleteVolume(self, args={}):
         '''
@@ -1543,7 +1543,7 @@ class Client(BaseClient):
             raise RuntimeError("Missing required argument 'id'")
 
         return self.request('deleteVolume', args)
- 
+
 
     def listVolumes(self, args={}):
         '''
@@ -1562,8 +1562,8 @@ class Client(BaseClient):
                caller; if set to true - list resources that the caller is authorized to see.
                Default value is false
             name - the name of the disk volume
-            page - 
-            pagesize - 
+            page -
+            pagesize -
             podid - the pod id the disk volume belongs to
             projectid - list firewall rules by project
             type - the type of disk volume
@@ -1573,7 +1573,7 @@ class Client(BaseClient):
         '''
 
         return self.request('listVolumes', args)
- 
+
 
     def extractVolume(self, args={}):
         '''
@@ -1593,7 +1593,7 @@ class Client(BaseClient):
             raise RuntimeError("Missing required argument 'zoneid'")
 
         return self.request('extractVolume', args)
- 
+
 
     def migrateVolume(self, args={}):
         '''
@@ -1609,7 +1609,7 @@ class Client(BaseClient):
             raise RuntimeError("Missing required argument 'volumeid'")
 
         return self.request('migrateVolume', args)
- 
+
 
     def createVolumeOnFiler(self, args={}):
         '''
@@ -1642,7 +1642,7 @@ class Client(BaseClient):
             raise RuntimeError("Missing required argument 'volumename'")
 
         return self.request('createVolumeOnFiler', args)
- 
+
 
     def destroyVolumeOnFiler(self, args={}):
         '''
@@ -1661,7 +1661,7 @@ class Client(BaseClient):
             raise RuntimeError("Missing required argument 'volumename'")
 
         return self.request('destroyVolumeOnFiler', args)
- 
+
 
     def listVolumesOnFiler(self, args={}):
         '''
@@ -1675,7 +1675,7 @@ class Client(BaseClient):
             raise RuntimeError("Missing required argument 'poolname'")
 
         return self.request('listVolumesOnFiler', args)
- 
+
 
     def createUser(self, args={}):
         '''
@@ -1710,7 +1710,7 @@ class Client(BaseClient):
             raise RuntimeError("Missing required argument 'username'")
 
         return self.request('createUser', args)
- 
+
 
     def deleteUser(self, args={}):
         '''
@@ -1723,7 +1723,7 @@ class Client(BaseClient):
             raise RuntimeError("Missing required argument 'id'")
 
         return self.request('deleteUser', args)
- 
+
 
     def updateUser(self, args={}):
         '''
@@ -1747,7 +1747,7 @@ class Client(BaseClient):
             raise RuntimeError("Missing required argument 'id'")
 
         return self.request('updateUser', args)
- 
+
 
     def listUsers(self, args={}):
         '''
@@ -1766,15 +1766,15 @@ class Client(BaseClient):
             listall - If set to false, list only resources belonging to the command's
                caller; if set to true - list resources that the caller is authorized to see.
                Default value is false
-            page - 
-            pagesize - 
+            page -
+            pagesize -
             state - List users by state of the user account.
             username - List user by the username
             page - Pagination
         '''
 
         return self.request('listUsers', args)
- 
+
 
     def disableUser(self, args={}):
         '''
@@ -1787,7 +1787,7 @@ class Client(BaseClient):
             raise RuntimeError("Missing required argument 'id'")
 
         return self.request('disableUser', args)
- 
+
 
     def enableUser(self, args={}):
         '''
@@ -1800,7 +1800,7 @@ class Client(BaseClient):
             raise RuntimeError("Missing required argument 'id'")
 
         return self.request('enableUser', args)
- 
+
 
     def registerUserKeys(self, args={}):
         '''
@@ -1818,7 +1818,7 @@ class Client(BaseClient):
             raise RuntimeError("Missing required argument 'id'")
 
         return self.request('registerUserKeys', args)
- 
+
 
     def addVpnUser(self, args={}):
         '''
@@ -1838,7 +1838,7 @@ class Client(BaseClient):
             raise RuntimeError("Missing required argument 'username'")
 
         return self.request('addVpnUser', args)
- 
+
 
     def removeVpnUser(self, args={}):
         '''
@@ -1855,7 +1855,7 @@ class Client(BaseClient):
             raise RuntimeError("Missing required argument 'username'")
 
         return self.request('removeVpnUser', args)
- 
+
 
     def listVpnUsers(self, args={}):
         '''
@@ -1872,15 +1872,15 @@ class Client(BaseClient):
             listall - If set to false, list only resources belonging to the command's
                caller; if set to true - list resources that the caller is authorized to see.
                Default value is false
-            page - 
-            pagesize - 
+            page -
+            pagesize -
             projectid - list firewall rules by project
             username - the username of the vpn user.
             page - Pagination
         '''
 
         return self.request('listVpnUsers', args)
- 
+
 
     def createTemplate(self, args={}):
         '''
@@ -1920,7 +1920,7 @@ class Client(BaseClient):
             raise RuntimeError("Missing required argument 'ostypeid'")
 
         return self.request('createTemplate', args)
- 
+
 
     def registerTemplate(self, args={}):
         '''
@@ -1973,7 +1973,7 @@ class Client(BaseClient):
             raise RuntimeError("Missing required argument 'zoneid'")
 
         return self.request('registerTemplate', args)
- 
+
 
     def updateTemplate(self, args={}):
         '''
@@ -1994,7 +1994,7 @@ class Client(BaseClient):
             raise RuntimeError("Missing required argument 'id'")
 
         return self.request('updateTemplate', args)
- 
+
 
     def copyTemplate(self, args={}):
         '''
@@ -2013,7 +2013,7 @@ class Client(BaseClient):
             raise RuntimeError("Missing required argument 'sourcezoneid'")
 
         return self.request('copyTemplate', args)
- 
+
 
     def deleteTemplate(self, args={}):
         '''
@@ -2028,7 +2028,7 @@ class Client(BaseClient):
             raise RuntimeError("Missing required argument 'id'")
 
         return self.request('deleteTemplate', args)
- 
+
 
     def listTemplates(self, args={}):
         '''
@@ -2053,8 +2053,8 @@ class Client(BaseClient):
                caller; if set to true - list resources that the caller is authorized to see.
                Default value is false
             name - the template name
-            page - 
-            pagesize - 
+            page -
+            pagesize -
             projectid - list firewall rules by project
             zoneid - list templates by zoneId
             page - Pagination
@@ -2063,7 +2063,7 @@ class Client(BaseClient):
             raise RuntimeError("Missing required argument 'templatefilter'")
 
         return self.request('listTemplates', args)
- 
+
 
     def updateTemplatePermissions(self, args={}):
         '''
@@ -2089,7 +2089,7 @@ class Client(BaseClient):
             raise RuntimeError("Missing required argument 'id'")
 
         return self.request('updateTemplatePermissions', args)
- 
+
 
     def listTemplatePermissions(self, args={}):
         '''
@@ -2104,7 +2104,7 @@ class Client(BaseClient):
             raise RuntimeError("Missing required argument 'id'")
 
         return self.request('listTemplatePermissions', args)
- 
+
 
     def extractTemplate(self, args={}):
         '''
@@ -2122,7 +2122,7 @@ class Client(BaseClient):
             raise RuntimeError("Missing required argument 'mode'")
 
         return self.request('extractTemplate', args)
- 
+
 
     def prepareTemplate(self, args={}):
         '''
@@ -2139,7 +2139,7 @@ class Client(BaseClient):
             raise RuntimeError("Missing required argument 'zoneid'")
 
         return self.request('prepareTemplate', args)
- 
+
 
     def attachIso(self, args={}):
         '''
@@ -2155,7 +2155,7 @@ class Client(BaseClient):
             raise RuntimeError("Missing required argument 'virtualmachineid'")
 
         return self.request('attachIso', args)
- 
+
 
     def detachIso(self, args={}):
         '''
@@ -2168,7 +2168,7 @@ class Client(BaseClient):
             raise RuntimeError("Missing required argument 'virtualmachineid'")
 
         return self.request('detachIso', args)
- 
+
 
     def listIsos(self, args={}):
         '''
@@ -2197,15 +2197,15 @@ class Client(BaseClient):
                caller; if set to true - list resources that the caller is authorized to see.
                Default value is false
             name - list all isos by name
-            page - 
-            pagesize - 
+            page -
+            pagesize -
             projectid - list firewall rules by project
             zoneid - the ID of the zone
             page - Pagination
         '''
 
         return self.request('listIsos', args)
- 
+
 
     def registerIso(self, args={}):
         '''
@@ -2242,7 +2242,7 @@ class Client(BaseClient):
             raise RuntimeError("Missing required argument 'zoneid'")
 
         return self.request('registerIso', args)
- 
+
 
     def updateIso(self, args={}):
         '''
@@ -2263,7 +2263,7 @@ class Client(BaseClient):
             raise RuntimeError("Missing required argument 'id'")
 
         return self.request('updateIso', args)
- 
+
 
     def deleteIso(self, args={}):
         '''
@@ -2278,7 +2278,7 @@ class Client(BaseClient):
             raise RuntimeError("Missing required argument 'id'")
 
         return self.request('deleteIso', args)
- 
+
 
     def copyIso(self, args={}):
         '''
@@ -2297,7 +2297,7 @@ class Client(BaseClient):
             raise RuntimeError("Missing required argument 'sourcezoneid'")
 
         return self.request('copyIso', args)
- 
+
 
     def updateIsoPermissions(self, args={}):
         '''
@@ -2319,7 +2319,7 @@ class Client(BaseClient):
             raise RuntimeError("Missing required argument 'id'")
 
         return self.request('updateIsoPermissions', args)
- 
+
 
     def listIsoPermissions(self, args={}):
         '''
@@ -2334,7 +2334,7 @@ class Client(BaseClient):
             raise RuntimeError("Missing required argument 'id'")
 
         return self.request('listIsoPermissions', args)
- 
+
 
     def extractIso(self, args={}):
         '''
@@ -2352,7 +2352,7 @@ class Client(BaseClient):
             raise RuntimeError("Missing required argument 'mode'")
 
         return self.request('extractIso', args)
- 
+
 
     def listPortForwardingRules(self, args={}):
         '''
@@ -2370,14 +2370,14 @@ class Client(BaseClient):
             listall - If set to false, list only resources belonging to the command's
                caller; if set to true - list resources that the caller is authorized to see.
                Default value is false
-            page - 
-            pagesize - 
+            page -
+            pagesize -
             projectid - list firewall rules by project
             page - Pagination
         '''
 
         return self.request('listPortForwardingRules', args)
- 
+
 
     def createPortForwardingRule(self, args={}):
         '''
@@ -2409,7 +2409,7 @@ class Client(BaseClient):
             raise RuntimeError("Missing required argument 'virtualmachineid'")
 
         return self.request('createPortForwardingRule', args)
- 
+
 
     def deletePortForwardingRule(self, args={}):
         '''
@@ -2422,7 +2422,7 @@ class Client(BaseClient):
             raise RuntimeError("Missing required argument 'id'")
 
         return self.request('deletePortForwardingRule', args)
- 
+
 
     def createFirewallRule(self, args={}):
         '''
@@ -2443,7 +2443,7 @@ class Client(BaseClient):
             raise RuntimeError("Missing required argument 'protocol'")
 
         return self.request('createFirewallRule', args)
- 
+
 
     def deleteFirewallRule(self, args={}):
         '''
@@ -2456,7 +2456,7 @@ class Client(BaseClient):
             raise RuntimeError("Missing required argument 'id'")
 
         return self.request('deleteFirewallRule', args)
- 
+
 
     def listFirewallRules(self, args={}):
         '''
@@ -2474,14 +2474,14 @@ class Client(BaseClient):
             listall - If set to false, list only resources belonging to the command's
                caller; if set to true - list resources that the caller is authorized to see.
                Default value is false
-            page - 
-            pagesize - 
+            page -
+            pagesize -
             projectid - list firewall rules by project
             page - Pagination
         '''
 
         return self.request('listFirewallRules', args)
- 
+
 
     def addSrxFirewall(self, args={}):
         '''
@@ -2506,7 +2506,7 @@ class Client(BaseClient):
             raise RuntimeError("Missing required argument 'username'")
 
         return self.request('addSrxFirewall', args)
- 
+
 
     def deleteSrxFirewall(self, args={}):
         '''
@@ -2519,7 +2519,7 @@ class Client(BaseClient):
             raise RuntimeError("Missing required argument 'fwdeviceid'")
 
         return self.request('deleteSrxFirewall', args)
- 
+
 
     def configureSrxFirewall(self, args={}):
         '''
@@ -2534,7 +2534,7 @@ class Client(BaseClient):
             raise RuntimeError("Missing required argument 'fwdeviceid'")
 
         return self.request('configureSrxFirewall', args)
- 
+
 
     def listSrxFirewalls(self, args={}):
         '''
@@ -2543,14 +2543,14 @@ class Client(BaseClient):
         args - A dictionary. The following are options for keys:
             fwdeviceid - SRX firewall device ID
             keyword - List by keyword
-            page - 
-            pagesize - 
+            page -
+            pagesize -
             physicalnetworkid - the Physical Network ID
             page - Pagination
         '''
 
         return self.request('listSrxFirewalls', args)
- 
+
 
     def startRouter(self, args={}):
         '''
@@ -2563,7 +2563,7 @@ class Client(BaseClient):
             raise RuntimeError("Missing required argument 'id'")
 
         return self.request('startRouter', args)
- 
+
 
     def rebootRouter(self, args={}):
         '''
@@ -2576,7 +2576,7 @@ class Client(BaseClient):
             raise RuntimeError("Missing required argument 'id'")
 
         return self.request('rebootRouter', args)
- 
+
 
     def stopRouter(self, args={}):
         '''
@@ -2590,7 +2590,7 @@ class Client(BaseClient):
             raise RuntimeError("Missing required argument 'id'")
 
         return self.request('stopRouter', args)
- 
+
 
     def destroyRouter(self, args={}):
         '''
@@ -2603,7 +2603,7 @@ class Client(BaseClient):
             raise RuntimeError("Missing required argument 'id'")
 
         return self.request('destroyRouter', args)
- 
+
 
     def changeServiceForRouter(self, args={}):
         '''
@@ -2619,7 +2619,7 @@ class Client(BaseClient):
             raise RuntimeError("Missing required argument 'serviceofferingid'")
 
         return self.request('changeServiceForRouter', args)
- 
+
 
     def listRouters(self, args={}):
         '''
@@ -2639,8 +2639,8 @@ class Client(BaseClient):
                Default value is false
             name - the name of the router
             networkid - list by network id
-            page - 
-            pagesize - 
+            page -
+            pagesize -
             podid - the Pod ID of the router
             projectid - list firewall rules by project
             state - the state of the router
@@ -2649,7 +2649,7 @@ class Client(BaseClient):
         '''
 
         return self.request('listRouters', args)
- 
+
 
     def createVirtualRouterElement(self, args={}):
         '''
@@ -2662,7 +2662,7 @@ class Client(BaseClient):
             raise RuntimeError("Missing required argument 'nspid'")
 
         return self.request('createVirtualRouterElement', args)
- 
+
 
     def configureVirtualRouterElement(self, args={}):
         '''
@@ -2678,7 +2678,7 @@ class Client(BaseClient):
             raise RuntimeError("Missing required argument 'enabled'")
 
         return self.request('configureVirtualRouterElement', args)
- 
+
 
     def listVirtualRouterElements(self, args={}):
         '''
@@ -2689,13 +2689,13 @@ class Client(BaseClient):
             id - list virtual router elements by id
             keyword - List by keyword
             nspid - list virtual router elements by network service provider id
-            page - 
-            pagesize - 
+            page -
+            pagesize -
             page - Pagination
         '''
 
         return self.request('listVirtualRouterElements', args)
- 
+
 
     def createProject(self, args={}):
         '''
@@ -2713,7 +2713,7 @@ class Client(BaseClient):
             raise RuntimeError("Missing required argument 'name'")
 
         return self.request('createProject', args)
- 
+
 
     def deleteProject(self, args={}):
         '''
@@ -2726,7 +2726,7 @@ class Client(BaseClient):
             raise RuntimeError("Missing required argument 'id'")
 
         return self.request('deleteProject', args)
- 
+
 
     def updateProject(self, args={}):
         '''
@@ -2741,7 +2741,7 @@ class Client(BaseClient):
             raise RuntimeError("Missing required argument 'id'")
 
         return self.request('updateProject', args)
- 
+
 
     def activateProject(self, args={}):
         '''
@@ -2754,7 +2754,7 @@ class Client(BaseClient):
             raise RuntimeError("Missing required argument 'id'")
 
         return self.request('activateProject', args)
- 
+
 
     def suspendProject(self, args={}):
         '''
@@ -2767,7 +2767,7 @@ class Client(BaseClient):
             raise RuntimeError("Missing required argument 'id'")
 
         return self.request('suspendProject', args)
- 
+
 
     def listProjects(self, args={}):
         '''
@@ -2786,14 +2786,14 @@ class Client(BaseClient):
                caller; if set to true - list resources that the caller is authorized to see.
                Default value is false
             name - list projects by name
-            page - 
-            pagesize - 
+            page -
+            pagesize -
             state - list projects by state
             page - Pagination
         '''
 
         return self.request('listProjects', args)
- 
+
 
     def listProjectInvitations(self, args={}):
         '''
@@ -2812,15 +2812,15 @@ class Client(BaseClient):
             listall - If set to false, list only resources belonging to the command's
                caller; if set to true - list resources that the caller is authorized to see.
                Default value is false
-            page - 
-            pagesize - 
+            page -
+            pagesize -
             projectid - list by project id
             state - list invitations by state
             page - Pagination
         '''
 
         return self.request('listProjectInvitations', args)
- 
+
 
     def updateProjectInvitation(self, args={}):
         '''
@@ -2837,7 +2837,7 @@ class Client(BaseClient):
             raise RuntimeError("Missing required argument 'projectid'")
 
         return self.request('updateProjectInvitation', args)
- 
+
 
     def deleteProjectInvitation(self, args={}):
         '''
@@ -2850,7 +2850,7 @@ class Client(BaseClient):
             raise RuntimeError("Missing required argument 'id'")
 
         return self.request('deleteProjectInvitation', args)
- 
+
 
     def addHost(self, args={}):
         '''
@@ -2881,7 +2881,7 @@ class Client(BaseClient):
             raise RuntimeError("Missing required argument 'zoneid'")
 
         return self.request('addHost', args)
- 
+
 
     def reconnectHost(self, args={}):
         '''
@@ -2894,7 +2894,7 @@ class Client(BaseClient):
             raise RuntimeError("Missing required argument 'id'")
 
         return self.request('reconnectHost', args)
- 
+
 
     def updateHost(self, args={}):
         '''
@@ -2912,7 +2912,7 @@ class Client(BaseClient):
             raise RuntimeError("Missing required argument 'id'")
 
         return self.request('updateHost', args)
- 
+
 
     def deleteHost(self, args={}):
         '''
@@ -2929,7 +2929,7 @@ class Client(BaseClient):
             raise RuntimeError("Missing required argument 'id'")
 
         return self.request('deleteHost', args)
- 
+
 
     def prepareHostForMaintenance(self, args={}):
         '''
@@ -2942,7 +2942,7 @@ class Client(BaseClient):
             raise RuntimeError("Missing required argument 'id'")
 
         return self.request('prepareHostForMaintenance', args)
- 
+
 
     def cancelHostMaintenance(self, args={}):
         '''
@@ -2955,7 +2955,7 @@ class Client(BaseClient):
             raise RuntimeError("Missing required argument 'id'")
 
         return self.request('cancelHostMaintenance', args)
- 
+
 
     def listHosts(self, args={}):
         '''
@@ -2968,8 +2968,8 @@ class Client(BaseClient):
             id - the id of the host
             keyword - List by keyword
             name - the name of the host
-            page - 
-            pagesize - 
+            page -
+            pagesize -
             podid - the Pod ID for the host
             resourcestate - list hosts by resource state. Resource state represents
                current state determined by admin of host, valule can be one of [Enabled,
@@ -2984,7 +2984,7 @@ class Client(BaseClient):
         '''
 
         return self.request('listHosts', args)
- 
+
 
     def addSecondaryStorage(self, args={}):
         '''
@@ -2998,7 +2998,7 @@ class Client(BaseClient):
             raise RuntimeError("Missing required argument 'url'")
 
         return self.request('addSecondaryStorage', args)
- 
+
 
     def updateHostPassword(self, args={}):
         '''
@@ -3016,7 +3016,7 @@ class Client(BaseClient):
             raise RuntimeError("Missing required argument 'username'")
 
         return self.request('updateHostPassword', args)
- 
+
 
     def createAccount(self, args={}):
         '''
@@ -3054,7 +3054,7 @@ class Client(BaseClient):
             raise RuntimeError("Missing required argument 'username'")
 
         return self.request('createAccount', args)
- 
+
 
     def deleteAccount(self, args={}):
         '''
@@ -3067,7 +3067,7 @@ class Client(BaseClient):
             raise RuntimeError("Missing required argument 'id'")
 
         return self.request('deleteAccount', args)
- 
+
 
     def updateAccount(self, args={}):
         '''
@@ -3086,7 +3086,7 @@ class Client(BaseClient):
             raise RuntimeError("Missing required argument 'newname'")
 
         return self.request('updateAccount', args)
- 
+
 
     def disableAccount(self, args={}):
         '''
@@ -3102,7 +3102,7 @@ class Client(BaseClient):
             raise RuntimeError("Missing required argument 'lock'")
 
         return self.request('disableAccount', args)
- 
+
 
     def enableAccount(self, args={}):
         '''
@@ -3115,7 +3115,7 @@ class Client(BaseClient):
         '''
 
         return self.request('enableAccount', args)
- 
+
 
     def listAccounts(self, args={}):
         '''
@@ -3135,15 +3135,15 @@ class Client(BaseClient):
                caller; if set to true - list resources that the caller is authorized to see.
                Default value is false
             name - list account by account name
-            page - 
-            pagesize - 
+            page -
+            pagesize -
             state - list accounts by state. Valid states are enabled, disabled, and
                locked.
             page - Pagination
         '''
 
         return self.request('listAccounts', args)
- 
+
 
     def addAccountToProject(self, args={}):
         '''
@@ -3158,7 +3158,7 @@ class Client(BaseClient):
             raise RuntimeError("Missing required argument 'projectid'")
 
         return self.request('addAccountToProject', args)
- 
+
 
     def deleteAccountFromProject(self, args={}):
         '''
@@ -3174,7 +3174,7 @@ class Client(BaseClient):
             raise RuntimeError("Missing required argument 'projectid'")
 
         return self.request('deleteAccountFromProject', args)
- 
+
 
     def listProjectAccounts(self, args={}):
         '''
@@ -3184,8 +3184,8 @@ class Client(BaseClient):
             projectid - id of the project
             account - list accounts of the project by account name
             keyword - List by keyword
-            page - 
-            pagesize - 
+            page -
+            pagesize -
             role - list accounts of the project by role
             page - Pagination
         '''
@@ -3193,7 +3193,7 @@ class Client(BaseClient):
             raise RuntimeError("Missing required argument 'projectid'")
 
         return self.request('listProjectAccounts', args)
- 
+
 
     def listStoragePools(self, args={}):
         '''
@@ -3205,8 +3205,8 @@ class Client(BaseClient):
             ipaddress - the IP address for the storage pool
             keyword - List by keyword
             name - the name of the storage pool
-            page - 
-            pagesize - 
+            page -
+            pagesize -
             path - the storage pool path
             podid - the Pod ID for the storage pool
             zoneid - the Zone ID for the storage pool
@@ -3214,7 +3214,7 @@ class Client(BaseClient):
         '''
 
         return self.request('listStoragePools', args)
- 
+
 
     def createStoragePool(self, args={}):
         '''
@@ -3237,7 +3237,7 @@ class Client(BaseClient):
             raise RuntimeError("Missing required argument 'zoneid'")
 
         return self.request('createStoragePool', args)
- 
+
 
     def updateStoragePool(self, args={}):
         '''
@@ -3251,7 +3251,7 @@ class Client(BaseClient):
             raise RuntimeError("Missing required argument 'id'")
 
         return self.request('updateStoragePool', args)
- 
+
 
     def deleteStoragePool(self, args={}):
         '''
@@ -3264,7 +3264,7 @@ class Client(BaseClient):
             raise RuntimeError("Missing required argument 'id'")
 
         return self.request('deleteStoragePool', args)
- 
+
 
     def createPool(self, args={}):
         '''
@@ -3280,7 +3280,7 @@ class Client(BaseClient):
             raise RuntimeError("Missing required argument 'name'")
 
         return self.request('createPool', args)
- 
+
 
     def deletePool(self, args={}):
         '''
@@ -3293,7 +3293,7 @@ class Client(BaseClient):
             raise RuntimeError("Missing required argument 'poolname'")
 
         return self.request('deletePool', args)
- 
+
 
     def modifyPool(self, args={}):
         '''
@@ -3309,7 +3309,7 @@ class Client(BaseClient):
             raise RuntimeError("Missing required argument 'poolname'")
 
         return self.request('modifyPool', args)
- 
+
 
     def listPools(self, args={}):
         '''
@@ -3320,7 +3320,7 @@ class Client(BaseClient):
         '''
 
         return self.request('listPools', args)
- 
+
 
     def createSecurityGroup(self, args={}):
         '''
@@ -3339,7 +3339,7 @@ class Client(BaseClient):
             raise RuntimeError("Missing required argument 'name'")
 
         return self.request('createSecurityGroup', args)
- 
+
 
     def deleteSecurityGroup(self, args={}):
         '''
@@ -3355,7 +3355,7 @@ class Client(BaseClient):
         '''
 
         return self.request('deleteSecurityGroup', args)
- 
+
 
     def authorizeSecurityGroupIngress(self, args={}):
         '''
@@ -3381,7 +3381,7 @@ class Client(BaseClient):
         '''
 
         return self.request('authorizeSecurityGroupIngress', args)
- 
+
 
     def revokeSecurityGroupIngress(self, args={}):
         '''
@@ -3394,7 +3394,7 @@ class Client(BaseClient):
             raise RuntimeError("Missing required argument 'id'")
 
         return self.request('revokeSecurityGroupIngress', args)
- 
+
 
     def authorizeSecurityGroupEgress(self, args={}):
         '''
@@ -3420,7 +3420,7 @@ class Client(BaseClient):
         '''
 
         return self.request('authorizeSecurityGroupEgress', args)
- 
+
 
     def revokeSecurityGroupEgress(self, args={}):
         '''
@@ -3433,7 +3433,7 @@ class Client(BaseClient):
             raise RuntimeError("Missing required argument 'id'")
 
         return self.request('revokeSecurityGroupEgress', args)
- 
+
 
     def listSecurityGroups(self, args={}):
         '''
@@ -3450,8 +3450,8 @@ class Client(BaseClient):
             listall - If set to false, list only resources belonging to the command's
                caller; if set to true - list resources that the caller is authorized to see.
                Default value is false
-            page - 
-            pagesize - 
+            page -
+            pagesize -
             projectid - list firewall rules by project
             securitygroupname - lists security groups by name
             virtualmachineid - lists security groups by virtual machine id
@@ -3459,7 +3459,7 @@ class Client(BaseClient):
         '''
 
         return self.request('listSecurityGroups', args)
- 
+
 
     def startSystemVm(self, args={}):
         '''
@@ -3472,7 +3472,7 @@ class Client(BaseClient):
             raise RuntimeError("Missing required argument 'id'")
 
         return self.request('startSystemVm', args)
- 
+
 
     def rebootSystemVm(self, args={}):
         '''
@@ -3485,7 +3485,7 @@ class Client(BaseClient):
             raise RuntimeError("Missing required argument 'id'")
 
         return self.request('rebootSystemVm', args)
- 
+
 
     def stopSystemVm(self, args={}):
         '''
@@ -3499,7 +3499,7 @@ class Client(BaseClient):
             raise RuntimeError("Missing required argument 'id'")
 
         return self.request('stopSystemVm', args)
- 
+
 
     def destroySystemVm(self, args={}):
         '''
@@ -3512,7 +3512,7 @@ class Client(BaseClient):
             raise RuntimeError("Missing required argument 'id'")
 
         return self.request('destroySystemVm', args)
- 
+
 
     def listSystemVms(self, args={}):
         '''
@@ -3523,8 +3523,8 @@ class Client(BaseClient):
             id - the ID of the system VM
             keyword - List by keyword
             name - the name of the system VM
-            page - 
-            pagesize - 
+            page -
+            pagesize -
             podid - the Pod ID of the system VM
             state - the state of the system VM
             systemvmtype - the system VM type. Possible types are "consoleproxy" and
@@ -3534,7 +3534,7 @@ class Client(BaseClient):
         '''
 
         return self.request('listSystemVms', args)
- 
+
 
     def migrateSystemVm(self, args={}):
         '''
@@ -3550,7 +3550,7 @@ class Client(BaseClient):
             raise RuntimeError("Missing required argument 'virtualmachineid'")
 
         return self.request('migrateSystemVm', args)
- 
+
 
     def createSnapshot(self, args={}):
         '''
@@ -3603,7 +3603,7 @@ class Client(BaseClient):
 
 
 
- 
+
 
     def listSnapshots(self, args={}):
         '''
@@ -3622,8 +3622,8 @@ class Client(BaseClient):
                caller; if set to true - list resources that the caller is authorized to see.
                Default value is false
             name - lists snapshot by snapshot name
-            page - 
-            pagesize - 
+            page -
+            pagesize -
             projectid - list firewall rules by project
             snapshottype - valid values are MANUAL or RECURRING.
             volumeid - the ID of the disk volume
@@ -3631,7 +3631,7 @@ class Client(BaseClient):
         '''
 
         return self.request('listSnapshots', args)
- 
+
 
     def deleteSnapshot(self, args={}):
         '''
@@ -3644,7 +3644,7 @@ class Client(BaseClient):
             raise RuntimeError("Missing required argument 'id'")
 
         return self.request('deleteSnapshot', args)
- 
+
 
     def createSnapshotPolicy(self, args={}):
         '''
@@ -3672,7 +3672,7 @@ class Client(BaseClient):
             raise RuntimeError("Missing required argument 'volumeid'")
 
         return self.request('createSnapshotPolicy', args)
- 
+
 
     def deleteSnapshotPolicies(self, args={}):
         '''
@@ -3684,7 +3684,7 @@ class Client(BaseClient):
         '''
 
         return self.request('deleteSnapshotPolicies', args)
- 
+
 
     def listSnapshotPolicies(self, args={}):
         '''
@@ -3693,15 +3693,15 @@ class Client(BaseClient):
         args - A dictionary. The following are options for keys:
             volumeid - the ID of the disk volume
             keyword - List by keyword
-            page - 
-            pagesize - 
+            page -
+            pagesize -
             page - Pagination
         '''
         if not 'volumeid' in args:
             raise RuntimeError("Missing required argument 'volumeid'")
 
         return self.request('listSnapshotPolicies', args)
- 
+
 
     def createLunOnFiler(self, args={}):
         '''
@@ -3717,7 +3717,7 @@ class Client(BaseClient):
             raise RuntimeError("Missing required argument 'size'")
 
         return self.request('createLunOnFiler', args)
- 
+
 
     def destroyLunOnFiler(self, args={}):
         '''
@@ -3730,7 +3730,7 @@ class Client(BaseClient):
             raise RuntimeError("Missing required argument 'path'")
 
         return self.request('destroyLunOnFiler', args)
- 
+
 
     def listLunsOnFiler(self, args={}):
         '''
@@ -3744,7 +3744,7 @@ class Client(BaseClient):
             raise RuntimeError("Missing required argument 'poolname'")
 
         return self.request('listLunsOnFiler', args)
- 
+
 
     def associateLun(self, args={}):
         '''
@@ -3760,7 +3760,7 @@ class Client(BaseClient):
             raise RuntimeError("Missing required argument 'name'")
 
         return self.request('associateLun', args)
- 
+
 
     def dissociateLun(self, args={}):
         '''
@@ -3776,7 +3776,7 @@ class Client(BaseClient):
             raise RuntimeError("Missing required argument 'path'")
 
         return self.request('dissociateLun', args)
- 
+
 
     def enableStaticNat(self, args={}):
         '''
@@ -3794,7 +3794,7 @@ class Client(BaseClient):
             raise RuntimeError("Missing required argument 'virtualmachineid'")
 
         return self.request('enableStaticNat', args)
- 
+
 
     def createIpForwardingRule(self, args={}):
         '''
@@ -3819,7 +3819,7 @@ class Client(BaseClient):
             raise RuntimeError("Missing required argument 'startport'")
 
         return self.request('createIpForwardingRule', args)
- 
+
 
     def deleteIpForwardingRule(self, args={}):
         '''
@@ -3832,7 +3832,7 @@ class Client(BaseClient):
             raise RuntimeError("Missing required argument 'id'")
 
         return self.request('deleteIpForwardingRule', args)
- 
+
 
     def listIpForwardingRules(self, args={}):
         '''
@@ -3850,15 +3850,15 @@ class Client(BaseClient):
             listall - If set to false, list only resources belonging to the command's
                caller; if set to true - list resources that the caller is authorized to see.
                Default value is false
-            page - 
-            pagesize - 
+            page -
+            pagesize -
             projectid - list firewall rules by project
             virtualmachineid - Lists all rules applied to the specified Vm.
             page - Pagination
         '''
 
         return self.request('listIpForwardingRules', args)
- 
+
 
     def disableStaticNat(self, args={}):
         '''
@@ -3872,7 +3872,7 @@ class Client(BaseClient):
             raise RuntimeError("Missing required argument 'ipaddressid'")
 
         return self.request('disableStaticNat', args)
- 
+
 
     def createDomain(self, args={}):
         '''
@@ -3888,7 +3888,7 @@ class Client(BaseClient):
             raise RuntimeError("Missing required argument 'name'")
 
         return self.request('createDomain', args)
- 
+
 
     def updateDomain(self, args={}):
         '''
@@ -3904,7 +3904,7 @@ class Client(BaseClient):
             raise RuntimeError("Missing required argument 'id'")
 
         return self.request('updateDomain', args)
- 
+
 
     def deleteDomain(self, args={}):
         '''
@@ -3919,7 +3919,7 @@ class Client(BaseClient):
             raise RuntimeError("Missing required argument 'id'")
 
         return self.request('deleteDomain', args)
- 
+
 
     def listDomains(self, args={}):
         '''
@@ -3933,13 +3933,13 @@ class Client(BaseClient):
                caller; if set to true - list resources that the caller is authorized to see.
                Default value is false
             name - List domain by domain name.
-            page - 
-            pagesize - 
+            page -
+            pagesize -
             page - Pagination
         '''
 
         return self.request('listDomains', args)
- 
+
 
     def listDomainChildren(self, args={}):
         '''
@@ -3954,13 +3954,13 @@ class Client(BaseClient):
                caller; if set to true - list resources that the caller is authorized to see.
                Default value is false
             name - list children domains by name
-            page - 
-            pagesize - 
+            page -
+            pagesize -
             page - Pagination
         '''
 
         return self.request('listDomainChildren', args)
- 
+
 
     def createZone(self, args={}):
         '''
@@ -3991,7 +3991,7 @@ class Client(BaseClient):
             raise RuntimeError("Missing required argument 'networktype'")
 
         return self.request('createZone', args)
- 
+
 
     def updateZone(self, args={}):
         '''
@@ -4018,7 +4018,7 @@ class Client(BaseClient):
             raise RuntimeError("Missing required argument 'id'")
 
         return self.request('updateZone', args)
- 
+
 
     def deleteZone(self, args={}):
         '''
@@ -4031,7 +4031,7 @@ class Client(BaseClient):
             raise RuntimeError("Missing required argument 'id'")
 
         return self.request('deleteZone', args)
- 
+
 
     def listZones(self, args={}):
         '''
@@ -4044,14 +4044,14 @@ class Client(BaseClient):
             domainid - the ID of the domain associated with the zone
             id - the ID of the zone
             keyword - List by keyword
-            page - 
-            pagesize - 
+            page -
+            pagesize -
             showcapacities - flag to display the capacity of the zones
             page - Pagination
         '''
 
         return self.request('listZones', args)
- 
+
 
     def createInstanceGroup(self, args={}):
         '''
@@ -4068,7 +4068,7 @@ class Client(BaseClient):
             raise RuntimeError("Missing required argument 'name'")
 
         return self.request('createInstanceGroup', args)
- 
+
 
     def deleteInstanceGroup(self, args={}):
         '''
@@ -4081,7 +4081,7 @@ class Client(BaseClient):
             raise RuntimeError("Missing required argument 'id'")
 
         return self.request('deleteInstanceGroup', args)
- 
+
 
     def updateInstanceGroup(self, args={}):
         '''
@@ -4095,7 +4095,7 @@ class Client(BaseClient):
             raise RuntimeError("Missing required argument 'id'")
 
         return self.request('updateInstanceGroup', args)
- 
+
 
     def listInstanceGroups(self, args={}):
         '''
@@ -4113,14 +4113,14 @@ class Client(BaseClient):
                caller; if set to true - list resources that the caller is authorized to see.
                Default value is false
             name - list instance groups by name
-            page - 
-            pagesize - 
+            page -
+            pagesize -
             projectid - list firewall rules by project
             page - Pagination
         '''
 
         return self.request('listInstanceGroups', args)
- 
+
 
     def createServiceOffering(self, args={}):
         '''
@@ -4158,7 +4158,7 @@ class Client(BaseClient):
             raise RuntimeError("Missing required argument 'name'")
 
         return self.request('createServiceOffering', args)
- 
+
 
     def deleteServiceOffering(self, args={}):
         '''
@@ -4171,7 +4171,7 @@ class Client(BaseClient):
             raise RuntimeError("Missing required argument 'id'")
 
         return self.request('deleteServiceOffering', args)
- 
+
 
     def updateServiceOffering(self, args={}):
         '''
@@ -4187,7 +4187,7 @@ class Client(BaseClient):
             raise RuntimeError("Missing required argument 'id'")
 
         return self.request('updateServiceOffering', args)
- 
+
 
     def listServiceOfferings(self, args={}):
         '''
@@ -4199,8 +4199,8 @@ class Client(BaseClient):
             issystem - is this a system vm offering
             keyword - List by keyword
             name - name of the service offering
-            page - 
-            pagesize - 
+            page -
+            pagesize -
             systemvmtype - the system VM type. Possible types are "consoleproxy",
                "secondarystoragevm" or "domainrouter".
             virtualmachineid - the ID of the virtual machine. Pass this in if you want
@@ -4209,7 +4209,7 @@ class Client(BaseClient):
         '''
 
         return self.request('listServiceOfferings', args)
- 
+
 
     def createPod(self, args={}):
         '''
@@ -4237,7 +4237,7 @@ class Client(BaseClient):
             raise RuntimeError("Missing required argument 'zoneid'")
 
         return self.request('createPod', args)
- 
+
 
     def updatePod(self, args={}):
         '''
@@ -4257,7 +4257,7 @@ class Client(BaseClient):
             raise RuntimeError("Missing required argument 'id'")
 
         return self.request('updatePod', args)
- 
+
 
     def deletePod(self, args={}):
         '''
@@ -4270,7 +4270,7 @@ class Client(BaseClient):
             raise RuntimeError("Missing required argument 'id'")
 
         return self.request('deletePod', args)
- 
+
 
     def listPods(self, args={}):
         '''
@@ -4281,15 +4281,15 @@ class Client(BaseClient):
             id - list Pods by ID
             keyword - List by keyword
             name - list Pods by name
-            page - 
-            pagesize - 
+            page -
+            pagesize -
             showcapacities - flag to display the capacity of the pods
             zoneid - list Pods by Zone ID
             page - Pagination
         '''
 
         return self.request('listPods', args)
- 
+
 
     def createDiskOffering(self, args={}):
         '''
@@ -4309,7 +4309,7 @@ class Client(BaseClient):
             raise RuntimeError("Missing required argument 'name'")
 
         return self.request('createDiskOffering', args)
- 
+
 
     def updateDiskOffering(self, args={}):
         '''
@@ -4326,7 +4326,7 @@ class Client(BaseClient):
             raise RuntimeError("Missing required argument 'id'")
 
         return self.request('updateDiskOffering', args)
- 
+
 
     def deleteDiskOffering(self, args={}):
         '''
@@ -4339,7 +4339,7 @@ class Client(BaseClient):
             raise RuntimeError("Missing required argument 'id'")
 
         return self.request('deleteDiskOffering', args)
- 
+
 
     def listDiskOfferings(self, args={}):
         '''
@@ -4350,13 +4350,13 @@ class Client(BaseClient):
             id - ID of the disk offering
             keyword - List by keyword
             name - name of the disk offering
-            page - 
-            pagesize - 
+            page -
+            pagesize -
             page - Pagination
         '''
 
         return self.request('listDiskOfferings', args)
- 
+
 
     def addCluster(self, args={}):
         '''
@@ -4385,7 +4385,7 @@ class Client(BaseClient):
             raise RuntimeError("Missing required argument 'zoneid'")
 
         return self.request('addCluster', args)
- 
+
 
     def deleteCluster(self, args={}):
         '''
@@ -4398,7 +4398,7 @@ class Client(BaseClient):
             raise RuntimeError("Missing required argument 'id'")
 
         return self.request('deleteCluster', args)
- 
+
 
     def updateCluster(self, args={}):
         '''
@@ -4417,7 +4417,7 @@ class Client(BaseClient):
             raise RuntimeError("Missing required argument 'id'")
 
         return self.request('updateCluster', args)
- 
+
 
     def listClusters(self, args={}):
         '''
@@ -4431,8 +4431,8 @@ class Client(BaseClient):
             keyword - List by keyword
             managedstate - whether this cluster is managed by cloudstack
             name - lists clusters by the cluster name
-            page - 
-            pagesize - 
+            page -
+            pagesize -
             podid - lists clusters by Pod ID
             showcapacities - flag to display the capacity of the clusters
             zoneid - lists clusters by Zone ID
@@ -4440,7 +4440,7 @@ class Client(BaseClient):
         '''
 
         return self.request('listClusters', args)
- 
+
 
     def createRemoteAccessVpn(self, args={}):
         '''
@@ -4461,7 +4461,7 @@ class Client(BaseClient):
             raise RuntimeError("Missing required argument 'publicipid'")
 
         return self.request('createRemoteAccessVpn', args)
- 
+
 
     def deleteRemoteAccessVpn(self, args={}):
         '''
@@ -4474,7 +4474,7 @@ class Client(BaseClient):
             raise RuntimeError("Missing required argument 'publicipid'")
 
         return self.request('deleteRemoteAccessVpn', args)
- 
+
 
     def listRemoteAccessVpns(self, args={}):
         '''
@@ -4491,8 +4491,8 @@ class Client(BaseClient):
             listall - If set to false, list only resources belonging to the command's
                caller; if set to true - list resources that the caller is authorized to see.
                Default value is false
-            page - 
-            pagesize - 
+            page -
+            pagesize -
             projectid - list firewall rules by project
             page - Pagination
         '''
@@ -4500,7 +4500,7 @@ class Client(BaseClient):
             raise RuntimeError("Missing required argument 'publicipid'")
 
         return self.request('listRemoteAccessVpns', args)
- 
+
 
     def createVlanIpRange(self, args={}):
         '''
@@ -4528,7 +4528,7 @@ class Client(BaseClient):
             raise RuntimeError("Missing required argument 'startip'")
 
         return self.request('createVlanIpRange', args)
- 
+
 
     def deleteVlanIpRange(self, args={}):
         '''
@@ -4541,7 +4541,7 @@ class Client(BaseClient):
             raise RuntimeError("Missing required argument 'id'")
 
         return self.request('deleteVlanIpRange', args)
- 
+
 
     def listVlanIpRanges(self, args={}):
         '''
@@ -4557,8 +4557,8 @@ class Client(BaseClient):
             id - the ID of the VLAN IP range
             keyword - List by keyword
             networkid - network id of the VLAN IP range
-            page - 
-            pagesize - 
+            page -
+            pagesize -
             physicalnetworkid - physical network id of the VLAN IP range
             podid - the Pod ID of the VLAN IP range
             projectid - project who will own the VLAN
@@ -4568,7 +4568,7 @@ class Client(BaseClient):
         '''
 
         return self.request('listVlanIpRanges', args)
- 
+
 
     def createSSHKeyPair(self, args={}):
         '''
@@ -4585,7 +4585,7 @@ class Client(BaseClient):
             raise RuntimeError("Missing required argument 'name'")
 
         return self.request('createSSHKeyPair', args)
- 
+
 
     def deleteSSHKeyPair(self, args={}):
         '''
@@ -4602,7 +4602,7 @@ class Client(BaseClient):
             raise RuntimeError("Missing required argument 'name'")
 
         return self.request('deleteSSHKeyPair', args)
- 
+
 
     def listSSHKeyPairs(self, args={}):
         '''
@@ -4620,14 +4620,14 @@ class Client(BaseClient):
                caller; if set to true - list resources that the caller is authorized to see.
                Default value is false
             name - A key pair name to look for
-            page - 
-            pagesize - 
+            page -
+            pagesize -
             projectid - list firewall rules by project
             page - Pagination
         '''
 
         return self.request('listSSHKeyPairs', args)
- 
+
 
     def updateResourceLimit(self, args={}):
         '''
@@ -4651,7 +4651,7 @@ class Client(BaseClient):
             raise RuntimeError("Missing required argument 'resourcetype'")
 
         return self.request('updateResourceLimit', args)
- 
+
 
     def updateResourceCount(self, args={}):
         '''
@@ -4675,7 +4675,7 @@ class Client(BaseClient):
             raise RuntimeError("Missing required argument 'domainid'")
 
         return self.request('updateResourceCount', args)
- 
+
 
     def listResourceLimits(self, args={}):
         '''
@@ -4692,8 +4692,8 @@ class Client(BaseClient):
             listall - If set to false, list only resources belonging to the command's
                caller; if set to true - list resources that the caller is authorized to see.
                Default value is false
-            page - 
-            pagesize - 
+            page -
+            pagesize -
             projectid - list firewall rules by project
             resourcetype - Type of resource to update. Values are 0, 1, 2, 3, and 4. 0 -
                Instance. Number of instances a user can create. 1 - IP. Number of public IP
@@ -4704,7 +4704,7 @@ class Client(BaseClient):
         '''
 
         return self.request('listResourceLimits', args)
- 
+
 
     def listHypervisors(self, args={}):
         '''
@@ -4716,7 +4716,7 @@ class Client(BaseClient):
         '''
 
         return self.request('listHypervisors', args)
- 
+
 
     def updateHypervisorCapabilities(self, args={}):
         '''
@@ -4730,7 +4730,7 @@ class Client(BaseClient):
         '''
 
         return self.request('updateHypervisorCapabilities', args)
- 
+
 
     def listHypervisorCapabilities(self, args={}):
         '''
@@ -4740,13 +4740,13 @@ class Client(BaseClient):
             hypervisor - the hypervisor for which to restrict the search
             id - ID of the hypervisor capability
             keyword - List by keyword
-            page - 
-            pagesize - 
+            page -
+            pagesize -
             page - Pagination
         '''
 
         return self.request('listHypervisorCapabilities', args)
- 
+
 
     def addExternalLoadBalancer(self, args={}):
         '''
@@ -4768,7 +4768,7 @@ class Client(BaseClient):
             raise RuntimeError("Missing required argument 'zoneid'")
 
         return self.request('addExternalLoadBalancer', args)
- 
+
 
     def deleteExternalLoadBalancer(self, args={}):
         '''
@@ -4781,7 +4781,7 @@ class Client(BaseClient):
             raise RuntimeError("Missing required argument 'id'")
 
         return self.request('deleteExternalLoadBalancer', args)
- 
+
 
     def listExternalLoadBalancers(self, args={}):
         '''
@@ -4789,14 +4789,14 @@ class Client(BaseClient):
 
         args - A dictionary. The following are options for keys:
             keyword - List by keyword
-            page - 
-            pagesize - 
+            page -
+            pagesize -
             zoneid - zone Id
             page - Pagination
         '''
 
         return self.request('listExternalLoadBalancers', args)
- 
+
 
     def addExternalFirewall(self, args={}):
         '''
@@ -4818,7 +4818,7 @@ class Client(BaseClient):
             raise RuntimeError("Missing required argument 'zoneid'")
 
         return self.request('addExternalFirewall', args)
- 
+
 
     def deleteExternalFirewall(self, args={}):
         '''
@@ -4831,7 +4831,7 @@ class Client(BaseClient):
             raise RuntimeError("Missing required argument 'id'")
 
         return self.request('deleteExternalFirewall', args)
- 
+
 
     def listExternalFirewalls(self, args={}):
         '''
@@ -4840,15 +4840,15 @@ class Client(BaseClient):
         args - A dictionary. The following are options for keys:
             zoneid - zone Id
             keyword - List by keyword
-            page - 
-            pagesize - 
+            page -
+            pagesize -
             page - Pagination
         '''
         if not 'zoneid' in args:
             raise RuntimeError("Missing required argument 'zoneid'")
 
         return self.request('listExternalFirewalls', args)
- 
+
 
     def updateConfiguration(self, args={}):
         '''
@@ -4862,7 +4862,7 @@ class Client(BaseClient):
             raise RuntimeError("Missing required argument 'name'")
 
         return self.request('updateConfiguration', args)
- 
+
 
     def listConfigurations(self, args={}):
         '''
@@ -4872,13 +4872,13 @@ class Client(BaseClient):
             category - lists configurations by category
             keyword - List by keyword
             name - lists configuration by name
-            page - 
-            pagesize - 
+            page -
+            pagesize -
             page - Pagination
         '''
 
         return self.request('listConfigurations', args)
- 
+
 
     def listCapabilities(self, args={}):
         '''
@@ -4889,7 +4889,7 @@ class Client(BaseClient):
         '''
 
         return self.request('listCapabilities', args)
- 
+
 
     def associateIpAddress(self, args={}):
         '''
@@ -4905,7 +4905,7 @@ class Client(BaseClient):
         '''
 
         return self.request('associateIpAddress', args)
- 
+
 
     def disassociateIpAddress(self, args={}):
         '''
@@ -4918,7 +4918,7 @@ class Client(BaseClient):
             raise RuntimeError("Missing required argument 'id'")
 
         return self.request('disassociateIpAddress', args)
- 
+
 
     def listPublicIpAddresses(self, args={}):
         '''
@@ -4943,8 +4943,8 @@ class Client(BaseClient):
             listall - If set to false, list only resources belonging to the command's
                caller; if set to true - list resources that the caller is authorized to see.
                Default value is false
-            page - 
-            pagesize - 
+            page -
+            pagesize -
             physicalnetworkid - lists all public IP addresses by physical network id
             projectid - list firewall rules by project
             vlanid - lists all public IP addresses by VLAN ID
@@ -4953,7 +4953,7 @@ class Client(BaseClient):
         '''
 
         return self.request('listPublicIpAddresses', args)
- 
+
 
     def addSwift(self, args={}):
         '''
@@ -4969,7 +4969,7 @@ class Client(BaseClient):
             raise RuntimeError("Missing required argument 'url'")
 
         return self.request('addSwift', args)
- 
+
 
     def listSwifts(self, args={}):
         '''
@@ -4978,13 +4978,13 @@ class Client(BaseClient):
         args - A dictionary. The following are options for keys:
             id - the id of the swift
             keyword - List by keyword
-            page - 
-            pagesize - 
+            page -
+            pagesize -
             page - Pagination
         '''
 
         return self.request('listSwifts', args)
- 
+
 
     def enableStorageMaintenance(self, args={}):
         '''
@@ -4997,7 +4997,7 @@ class Client(BaseClient):
             raise RuntimeError("Missing required argument 'id'")
 
         return self.request('enableStorageMaintenance', args)
- 
+
 
     def cancelStorageMaintenance(self, args={}):
         '''
@@ -5010,7 +5010,7 @@ class Client(BaseClient):
             raise RuntimeError("Missing required argument 'id'")
 
         return self.request('cancelStorageMaintenance', args)
- 
+
 
     def listOsTypes(self, args={}):
         '''
@@ -5020,13 +5020,13 @@ class Client(BaseClient):
             id - list by Os type Id
             keyword - List by keyword
             oscategoryid - list by Os Category id
-            page - 
-            pagesize - 
+            page -
+            pagesize -
             page - Pagination
         '''
 
         return self.request('listOsTypes', args)
- 
+
 
     def listOsCategories(self, args={}):
         '''
@@ -5035,13 +5035,13 @@ class Client(BaseClient):
         args - A dictionary. The following are options for keys:
             id - list Os category by id
             keyword - List by keyword
-            page - 
-            pagesize - 
+            page -
+            pagesize -
             page - Pagination
         '''
 
         return self.request('listOsCategories', args)
- 
+
 
     def listEvents(self, args={}):
         '''
@@ -5063,8 +5063,8 @@ class Client(BaseClient):
             listall - If set to false, list only resources belonging to the command's
                caller; if set to true - list resources that the caller is authorized to see.
                Default value is false
-            page - 
-            pagesize - 
+            page -
+            pagesize -
             projectid - list firewall rules by project
             startdate - the start date range of the list you want to retrieve (use
                format "yyyy-MM-dd" or the new format "yyyy-MM-dd HH:mm:ss")
@@ -5073,7 +5073,7 @@ class Client(BaseClient):
         '''
 
         return self.request('listEvents', args)
- 
+
 
     def listEventTypes(self, args={}):
         '''
@@ -5084,7 +5084,7 @@ class Client(BaseClient):
         '''
 
         return self.request('listEventTypes', args)
- 
+
 
     def queryAsyncJobResult(self, args={}):
         '''
@@ -5097,7 +5097,7 @@ class Client(BaseClient):
             raise RuntimeError("Missing required argument 'jobid'")
 
         return self.request('queryAsyncJobResult', args)
- 
+
 
     def listAsyncJobs(self, args={}):
         '''
@@ -5113,14 +5113,14 @@ class Client(BaseClient):
             listall - If set to false, list only resources belonging to the command's
                caller; if set to true - list resources that the caller is authorized to see.
                Default value is false
-            page - 
-            pagesize - 
+            page -
+            pagesize -
             startdate - the start date of the async job
             page - Pagination
         '''
 
         return self.request('listAsyncJobs', args)
- 
+
 
     def listCapacity(self, args={}):
         '''
@@ -5130,8 +5130,8 @@ class Client(BaseClient):
             clusterid - lists capacity by the Cluster ID
             fetchlatest - recalculate capacities and fetch the latest
             keyword - List by keyword
-            page - 
-            pagesize - 
+            page -
+            pagesize -
             podid - lists capacity by the Pod ID
             sortby - Sort the results. Available values: Usage
             type - lists capacity by type* CAPACITY_TYPE_MEMORY = 0* CAPACITY_TYPE_CPU =
@@ -5144,7 +5144,7 @@ class Client(BaseClient):
         '''
 
         return self.request('listCapacity', args)
- 
+
 
     def registerSSHKeyPair(self, args={}):
         '''
@@ -5164,7 +5164,7 @@ class Client(BaseClient):
             raise RuntimeError("Missing required argument 'publickey'")
 
         return self.request('registerSSHKeyPair', args)
- 
+
 
     def logout(self, args={}):
         '''
@@ -5174,7 +5174,7 @@ class Client(BaseClient):
         '''
 
         return self.request('logout', args)
- 
+
 
     def login(self, args={}):
         '''
@@ -5199,7 +5199,7 @@ class Client(BaseClient):
             raise RuntimeError("Missing required argument 'password'")
 
         return self.request('login', args)
- 
+
 
     def ldapConfig(self, args={}):
         '''
@@ -5228,7 +5228,7 @@ class Client(BaseClient):
             raise RuntimeError("Missing required argument 'searchbase'")
 
         return self.request('ldapConfig', args)
- 
+
 
     def getCloudIdentifier(self, args={}):
         '''
@@ -5241,7 +5241,7 @@ class Client(BaseClient):
             raise RuntimeError("Missing required argument 'userid'")
 
         return self.request('getCloudIdentifier', args)
- 
+
 
     def uploadCustomCertificate(self, args={}):
         '''
@@ -5260,7 +5260,7 @@ class Client(BaseClient):
             raise RuntimeError("Missing required argument 'domainsuffix'")
 
         return self.request('uploadCustomCertificate', args)
- 
+
 
     def listAlerts(self, args={}):
         '''
@@ -5269,8 +5269,8 @@ class Client(BaseClient):
         args - A dictionary. The following are options for keys:
             id - the ID of the alert
             keyword - List by keyword
-            page - 
-            pagesize - 
+            page -
+            pagesize -
             type - list by alert type
             page - Pagination
         '''
@@ -5280,7 +5280,7 @@ class Client(BaseClient):
     def createTags(self, args={}):
         '''
 	Creates resource tag(s)
- 
+
         args - A dictionary. The following are options for keys:
 		resourceids - list of resources to create the tags for
 		resourcetype - type of the resource
@@ -5332,5 +5332,20 @@ class Client(BaseClient):
             raise RuntimeError("Missing required argument 'resourceIds'")
         if not 'resourceType' in args:
             raise RuntimeError("Missing required argument 'resourceType'")
-
         return self.request('deleteTags', args)
+
+    def listVPCs(self, args={}):
+        return self.request('listVPCs', args)
+
+    def createVPC(self, args={}):
+        if not 'cidr' in args:
+            raise RuntimeError("Missing required argument 'cidr'")
+        if not 'displaytext' in args:
+            raise RuntimeError("Missing required argument 'displaytext'")
+        if not 'name' in args:
+            raise RuntimeError("Missing required argument 'name'")
+        if not 'vpcofferingid' in args:
+            raise RuntimeError("Missing required argument 'vpcofferingid'")
+        if not 'zoneid' in args:
+            raise RuntimeError("Missing required argument 'zoneid'")
+        return self.request('createVPC', args)
