@@ -16,28 +16,41 @@ class BaseClient(object):
         args['apikey']   = self.apikey
         args['command']  = command
         args['response'] = 'json'
-        
+
         params=[]
-        
+
         keys = sorted(args.keys())
 
         for k in keys:
             params.append(k + '=' + urllib.quote_plus(args[k]).replace("+", "%20"))
-       
+
         query = '&'.join(params)
 
         signature = base64.b64encode(hmac.new(
-            self.secret, 
-            msg=query.lower(), 
+            self.secret,
+            msg=query.lower(),
             digestmod=hashlib.sha1
         ).digest())
 
         query += '&signature=' + urllib.quote_plus(signature)
 
-        response = urllib2.urlopen(self.api + '?' + query)
+        try:
+            response = urllib2.urlopen(self.api + '?' + query)
+        except urllib2.HTTPError as error:
+            error_msg = ''
+            error_data = json.loads(error.read())
+            if len(error_data) == 1:
+                error_msg = 'ERROR: %s - %s' % (error_data.keys()[0],error_data[error_data.keys()[0]]['errortext'])
+            else:
+                error_msg = 'ERROR: Recieved muliaple errors.'
+            raise RuntimeError(error_msg)
+
         decoded = json.loads(response.read())
-       
+
         propertyResponse = command.lower() + 'response'
+        #TODO: wrong property returned by cloudstack api    
+        if propertyResponse == 'listcountersresponse':
+            propertyResponse = 'counterresponse'
         if not propertyResponse in decoded:
             if 'errorresponse' in decoded:
                 raise RuntimeError("ERROR: " + decoded['errorresponse']['errortext'])
