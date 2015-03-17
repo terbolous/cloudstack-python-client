@@ -228,6 +228,27 @@ class Client(BaseClient):
             raise RuntimeError("Missing required argument 'id'")
 
         return self.request('updateNetwork', args)
+
+    def listNetworkACLs(self, args={}):
+        '''
+        args - A dictionary. The following are options for keys:
+            id - Lists network ACL with the specified ID
+            account - List resources by account. Must be used with the 
+                domainId parameter.
+            domainid - list only resources belonging to the domain specified
+            isrecursive - defaults to false, but if true, lists all resources from 
+                the parent specified by the domainId till leaves
+            keyword - List by keyword
+            listall	- If set to false, list only resources belonging to the command's
+                caller; if set to true - list resources that the caller is authorized to see.
+                Default value is false
+            networkid - list network ACLs by network Id
+            projectid - list objects by project
+            tags - List resources by tags (key/value pairs)
+            traffictype - list network ACLs by traffic type - Ingress or Egress
+        '''
+
+        return self.request('listNetworkACLs', args)
  
 
     def createPhysicalNetwork(self, args={}):
@@ -901,7 +922,40 @@ class Client(BaseClient):
         '''
 
         return self.request('listNetscalerLoadBalancers', args)
- 
+
+    def listVPCs(self,args={}):
+        '''
+        lists Virtual Private Clouds (VPCs) configured
+
+        args - A dictionary. The following are options for keys:
+            account - list by account associated with the VPC. Must be used 
+                with the domainId parameter.
+            account - List resources by account. Must be used with the domainId parameter.
+            cidr - list by cidr of the VPC. All VPC guest networks' cidrs should be within this CIDR
+            displaytext - List by display text of the VPC
+            domainid - list by domain ID associated with the VPC. If used with the account 
+                parameter returns the VPC associated with the account for the specified domain.
+            domainid - list only resources belonging to the domain specified
+            id - list VPC by id	false
+            isrecursive - defaults to false, but if true, lists all resources from the parent
+                specified by the domainId till leaves.
+            keyword - List by keyword
+            listall - If set to false, list only resources belonging to the command's caller;
+                if set to true - list resources that the caller is authorized to see. Default
+                value is false
+            name - list by name of the VPC
+            page -
+            pagesize - 
+            projectid - list objects by project	
+            restartrequired - list VPCs by restartRequired option
+            state - list VPCs by state
+            supportedservices - list VPC supporting certain services
+            tags - List resources by tags (key/value pairs)
+            vpcofferingid - list by ID of the VPC offering
+            zoneid - list by zone
+        '''
+
+        return self.request('listVPCs',args)
 
     def deployVirtualMachine(self, args={}):
         '''
@@ -5157,5 +5211,103 @@ class Client(BaseClient):
         '''
 
         return self.request('listAlerts', args)
+
+    def listCounters(self, args={}):
+        '''
+        Lists the counters.
+
+        args - The following are options for keys:
+            id - the ID of the counter
+            name - name of the counter
+            source - source of the counter
+            value - value in case of snmp or other specific counters
+            zoneid - zone id of counter
+        '''
+
+        return self.request('listCounters', args)
+
+
+    def listConditions(self, args={}):
+        '''
+        Lists autoscale conditions.
+
+        args - The following are options for keys:
+            id - the id of the Condition
+            account - the owner of the Condition.
+            counter - Details of the Counter.
+            domain - the domain name of the owner.
+            domainid - the domain id of the Condition owner
+            project - the project name of the Condition
+            projectid - the project id of the Condition.
+            relationaloperator - Relational Operator to be used with threshold.
+            thresholdThreshold - Value for the counter.zoneidzone id of counter
+        '''
+
+        return self.request('listConditions', args)
+
+    def listAutoScalePolicies(self, args={}):
+        '''
+        Lists autoscale policies.
+
+        args - The following are options for keys:
+            id - the autoscale policy ID
+            account - the account owning the autoscale policy
+            action - the action to be executed if all the conditions evaluate to true for the specified duration.
+            conditions - the list of IDs of the conditions that are being evaluated on every interval
+            domain - the domain name of the autoscale policydomainidthe domain ID of the autoscale policy
+            duration - the duration for which the conditions have to be true before action is taken
+            project - the project name of the autoscale policy
+            projectid - the project id autoscale policy
+            quiettime - the cool down period for which the policy should not be evaluated after the action has been taken
+        '''
+
+        return self.request('listAutoScalePolicies', args)
+
+    def listAutoScaleVmProfiles(self, args={}):
+        '''
+        Lists autoscale vm profiles.
+
+        args - The following are options for keys:
+        id - the autoscale vm profile ID
+        account - the account owning the instance group
+        autoscaleuserid - the ID of the user used to launch and destroy the VMs
+        destroyvmgraceperiod - the time allowed for existing connections to get closed before a vm is destroyed
+        domain - the domain name of the vm profile
+        domainid - the domain ID of the vm profile
+        fordisplay - is profile for display to the regular user
+        otherdeployparams - parameters other than zoneId/serviceOfferringId/templateId to be used while deploying a virtual machine
+        project - the project name of the vm profile
+        projectid - the project id vm profile
+        serviceofferingid - the service offering to be used while deploying a virtual machine
+        templateid - the template to be used while deploying a virtual machine
+        zoneid - the availability zone to be used while deploying a virtual machine
+        '''
+
+        return self.request('listAutoScaleVmProfiles', args)
+
+    def listAutoScaleVmGroups(self, args={}):
+        '''
+        Lists autoscale vm groups.
+
+        args - The following are options for keys:
+        id - the autoscale vm group ID
+        account - the account owning the instance group
+        domain - the domain name of the vm profile
+        domainid - the domain ID of the vm profile
+        fordisplay - is group for display to the regular user
+        interval - the frequency at which the conditions have to be evaluated
+        lbruleid - the load balancer rule ID
+        maxmembers - the maximum number of members in the vmgroup, The number of instances in the vm group will be equal to or less than this number.
+        minmembers - the minimum number of members in the vmgroup, the number of instances in the vm group will be equal to or more than this number.
+        project - the project name of the vm profile
+        projectid - the project id vm profile
+        scaledownpolicies - list of scaledown autoscale policies
+        scaleuppolicies - list of scaleup autoscale policies
+        state - the current state of the AutoScale Vm Group
+        vmprofileid - the autoscale profile that contains information about the vms in the vm group.
+        '''
+
+        return self.request('listAutoScaleVmGroups', args)
+        
  
 
