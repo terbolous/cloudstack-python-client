@@ -5308,6 +5308,156 @@ class Client(BaseClient):
         '''
 
         return self.request('listAutoScaleVmGroups', args)
-        
- 
 
+    def createCondition(self, args={}):
+        '''
+        Creates a condition.
+
+        args - The following are options for keys:
+        id - the id of the Condition
+        account - the owner of the Condition.
+        counter - Details of the Counter.
+        domain - the domain name of the owner.
+        domainid - the domain id of the Condition owner
+        project - the project name of the Condition
+        projectid - the project id of the Condition.
+        relationaloperator - Relational Operator to be used with threshold.
+        threshold - Threshold Value for the counter.
+        zoneidzone - id of counter
+        '''
+        if not 'counterid' in args:
+            raise RuntimeError("Missing required argument 'counterid'")
+        if not 'relationaloperator' in args:
+            raise RuntimeError("Missing required argument 'relationaloperator'")
+        if not 'threshold' in args:
+            raise RuntimeError("Missing required argument 'threshold")
+
+        return self.request('createCondition', args)
+
+    def deleteCondition(self, args={}):
+        '''
+        Removes a condition.
+        '''
+        if not 'id' in args:
+            raise RuntimeError("Missing required argument 'id'")
+
+        return self.request('deleteCondition', args)
+
+    def createAutoScalePolicy(self, args={}):
+        '''
+        Creates an autoscale policy for a provision or deprovision action, the action is taken
+        when the all the conditions evaluates to true for the specified duration. The policy is
+        in effect once it is attached to a autscale vm group.
+
+        args - The following are options for keys:
+        id - the autoscale policy ID
+        account - the account owning the autoscale policy
+        action - the action (scaleup or scaledown) to be executed if all the conditions evaluate to true for the specified duration
+        conditions - the list of IDs of the conditions that are being evaluated on every interval
+        domain - the domain name of the autoscale policy
+        domainid - the domain ID of the autoscale policy
+        duration - the duration in seconds for which the conditions have to be true before action is taken
+        project - the project name of the autoscale policy
+        projectid - the project id autoscale policy
+        quiettime - the cool down period for which the policy should not be evaluated after the action has been taken
+        '''
+        if not 'action' in args:
+            raise RuntimeError("Missing required argument 'action'")
+        if not 'conditionids' in args:
+            raise RuntimeError("Missing required argument 'conditionids'")
+        if not 'duration' in args:
+            raise RuntimeError("Missing required argument 'duration'")
+
+        return self.request('createAutoScalePolicy', args)
+
+    def deleteAutoScalePolicy(self, args={}):
+        '''
+        Removes a autoscale policy
+        '''
+        if not 'id' in args:
+            raise RuntimeError("Missing required argument 'id'")
+
+        return self.request('deleteAutoScalePolicy', args)
+
+    def createAutoScaleVmProfile(self, args={}):
+        '''
+        Creates a profile that contains information about the virtual machine which will be provisioned automatically by autoscale feature.
+
+        args - The following are options for keys:
+        id - the autoscale vm profile ID
+        account - the account owning the instance group
+        autoscaleuserid - the ID of the user used to launch and destroy the VMs
+        destroyvmgraceperiod - the time allowed for existing connections to get closed before a vm is destroyed
+        domain - the domain name of the vm profile
+        domainid - the domain ID of the vm profile
+        fordisplayis  profile for display to the regular user
+        otherdeployparams - parameters other than zoneId/serviceOfferringId/templateId to be used while deploying a virtual machine
+        project - the project name of the vm profile
+        projectid - the project id vm profile
+        serviceofferingid - the service offering to be used while deploying a virtual machine
+        templateid - the template to be used while deploying a virtual machine
+        zoneid - the availability zone to be used while deploying a virtual machine
+        '''
+        if not 'serviceofferingid' in args:
+            raise RuntimeError("Missing required argument 'serviceofferingid'")
+        if not 'templateid' in args:
+            raise RuntimeError("Missing required argument 'templateid'")
+        if not 'zoneid' in args:
+            raise RuntimeError("Missing required argument 'zoneid'")
+
+        return self.request('createAutoScalePolicy', args)
+
+    def deleteAutoScaleVmProfile(self, args={}):
+        '''
+        Removes a autoscale vm profile
+        '''
+        if not 'id' in args:
+            raise RuntimeError("Missing required argument 'id'")
+
+        return self.request('deleteAutoScaleVmProfile', args)
+
+    def createAutoScaleVmGroup(self, args={}):
+        '''
+        Creates and automatically starts a virtual machine based on a service offering, disk offering, and template.
+
+        args - The following are options for keys:
+        id - the autoscale vm group ID
+        account - the account owning the instance group
+        domain - the domain name of the vm profile
+        domainid - the domain ID of the vm profile
+        fordisplay - is group for display to the regular user
+        interval - the frequency at which the conditions have to be evaluated
+        lbruleid - the load balancer rule ID
+        maxmembers - the maximum number of members in the vmgroup, The number of instances in the vm group will be equal to or less than this number.
+        minmembers - the minimum number of members in the vmgroup, the number of instances in the vm group will be equal to or more than this number.
+        project - the project name of the vm profile
+        projectid - the project id vm profile
+        scaledownpolicies - list of scaledown autoscale policies
+        scaleuppolicies - list of scaleup autoscale policies
+        state - the current state of the AutoScale Vm Group
+        vmprofileid - the autoscale profile that contains information about the vms in the vm group.
+        '''
+        if not 'lbruleid' in args:
+            raise RuntimeError("Missing required argument 'lbruleid'")
+        if not 'maxmembers' in args:
+            raise RuntimeError("Missing required argument 'maxmembers'")
+        if not 'minmembers' in args:
+            raise RuntimeError("Missing required argument 'minmembers'")
+        if not 'scaledownpolicyids' in args:
+            raise RuntimeError("Missing required argument 'scaledownpolicyids'")
+        if not 'scaleuppolicyids' in args:
+            raise RuntimeError("Missing required argument 'scaleuppolicyids'")
+        if not 'vmprofileid' in args:
+            raise RuntimeError("Missing required argument 'vmprofileid'")
+
+        return self.request('createAutoScaleVmGroup', args)
+
+    def deleteAutoScaleVmGroup(self, args={}):
+        '''
+        Removes a autoscale vm group
+        '''
+        if not 'id' in args:
+            raise RuntimeError("Missing required argument 'id'")
+
+        return self.request('deleteAutoScaleVmGroup', args)
+        
