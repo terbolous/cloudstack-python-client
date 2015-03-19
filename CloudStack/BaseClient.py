@@ -48,9 +48,13 @@ class BaseClient(object):
         decoded = json.loads(response.read())
 
         propertyResponse = command.lower() + 'response'
-        #TODO: wrong property returned by cloudstack api    
         if propertyResponse == 'listcountersresponse':
             propertyResponse = 'counterresponse'
+        if propertyResponse == 'createconditionresponse':
+            propertyResponse = 'conditionresponse'
+        if propertyResponse == 'createautoscalepolicyresponse':
+            propertyResponse = 'autoscalepolicyresponse'
+            
         if not propertyResponse in decoded:
             if 'errorresponse' in decoded:
                 raise RuntimeError("ERROR: " + decoded['errorresponse']['errortext'])
