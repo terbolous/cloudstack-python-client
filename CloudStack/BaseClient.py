@@ -42,12 +42,19 @@ class BaseClient(object):
             if len(error_data) == 1:
                 error_msg = 'ERROR: %s - %s' % (error_data.keys()[0],error_data[error_data.keys()[0]]['errortext'])
             else:
-                error_msg = 'ERROR: Recieved multiple errors.'
+                error_msg = 'ERROR: Received multiple errors.'
             raise RuntimeError(error_msg)
 
         decoded = json.loads(response.read())
 
         propertyResponse = command.lower() + 'response'
+        if propertyResponse == 'listcountersresponse':
+            propertyResponse = 'counterresponse'
+        if propertyResponse == 'createconditionresponse':
+            propertyResponse = 'conditionresponse'
+        if propertyResponse == 'createautoscalepolicyresponse':
+            propertyResponse = 'autoscalepolicyresponse'
+
         if not propertyResponse in decoded:
             if 'errorresponse' in decoded:
                 raise RuntimeError("ERROR: " + decoded['errorresponse']['errortext'])
