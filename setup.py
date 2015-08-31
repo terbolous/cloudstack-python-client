@@ -28,10 +28,10 @@ except ImportError:
 
 setup(
     name             = 'CloudStack',
-    version          = '4.0.0',
-    description      = "CloudStack API v4.5 Client",
-    long_description = "Python interface CloudStack v4.5 API",
-    author           = "Erik Weber and More",
+    version          = '0.1.0',
+    description      = "CloudStack API Client",
+    long_description = "Python interface for the CloudStack API",
+    author           = "Erik Weber",
     author_email     = "terbolous@gmail.com",
     url              = "https://github.com/terbolous/cloudstack-python-client",
     packages         = [ 'CloudStack' ],
