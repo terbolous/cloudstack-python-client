@@ -2,4 +2,5 @@
 *.pyo
 build/lib/
 dist/
-CloudStack.egg-info/
+.ropeproject/
+CloudStackClient.egg-info/
