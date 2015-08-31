@@ -35,7 +35,7 @@ def read(*paths):
 
 setup(
     name             = 'CloudStackClient',
-    version          = '0.1.1',
+    version          = '0.1.2',
     description      = "CloudStack API Client",
     long_description = (read('README.md') + '\r\n' +
                         read('HISTORY.rst') + '\r\n' +
