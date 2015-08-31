@@ -38,7 +38,7 @@ setup(
     long_description = (read('README.md') + '\r\n' +
                         read('HISTORY.rst') + '\r\n' +
                         read('AUTHORS')
-                       )
+                       ),
     author           = "Jason Hancock",
     author_email     = "terbolous@gmail.com",
     url              = "https://github.com/terbolous/cloudstack-python-client",
