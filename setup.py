@@ -16,7 +16,7 @@
 # THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS
 # OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABIL-
 # ITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT
-# SHALL THE AUTHOR BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, 
+# SHALL THE AUTHOR BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY,
 # WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 # OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS
 # IN THE SOFTWARE.
@@ -28,12 +28,12 @@ except ImportError:
 
 setup(
     name             = 'CloudStack',
-    version          = '3.0.0.1',
-    description      = "CloudStack API v2.2 Client",
-    long_description = "Python interface CloudStack v2.2 API",
-    author           = "Jason Hancock",
-    author_email     = "jsnbyh@gmail.com",
-    url              = "https://github.com/larstobi/cloudstack-python-client",
+    version          = '4.0.0',
+    description      = "CloudStack API v4.5 Client",
+    long_description = "Python interface CloudStack v4.5 API",
+    author           = "Erik Weber and More",
+    author_email     = "terbolous@gmail.com",
+    url              = "https://github.com/terbolous/cloudstack-python-client",
     packages         = [ 'CloudStack' ],
     license          = 'MIT',
     platforms        = 'Posix; MacOS X; Windows',
