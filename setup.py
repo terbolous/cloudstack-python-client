@@ -27,14 +27,14 @@ except ImportError:
     from distutils.core import setup
 
 setup(
-    name             = 'CloudStack',
+    name             = 'CloudStackClient',
     version          = '0.1.0',
     description      = "CloudStack API Client",
     long_description = "Python interface for the CloudStack API",
-    author           = "Erik Weber",
+    author           = "Jason Hancock",
     author_email     = "terbolous@gmail.com",
     url              = "https://github.com/terbolous/cloudstack-python-client",
-    packages         = [ 'CloudStack' ],
+    packages         = [ 'CloudStackClient' ],
     license          = 'MIT',
     platforms        = 'Posix; MacOS X; Windows',
 )
