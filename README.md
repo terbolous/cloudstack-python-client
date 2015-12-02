@@ -16,7 +16,7 @@ List all virtual machines
 ```python
 #!/usr/bin/python
 
-import CloudStack
+import CloudStackClient
 
 api = 'http://example.com:8080/client/api'
 apikey = 'API KEY'
@@ -37,7 +37,7 @@ Asynchronous tasks
 ```python
 #!/usr/bin/python
 
-import CloudStack
+import CloudStackClient
 
 api = 'http://example.com:8080/client/api'
 apikey = 'API KEY'
