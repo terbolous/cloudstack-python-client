@@ -35,13 +35,13 @@ def read(*paths):
 
 setup(
     name             = 'CloudStackClient',
-    version          = '0.1.2',
+    version          = '0.1.3',
     description      = "CloudStack API Client",
     long_description = (read('README.md') + '\r\n' +
                         read('HISTORY.rst') + '\r\n' +
                         read('AUTHORS')
                        ),
-    author           = "Jason Hancock",
+    author           = "Erik Weber",
     author_email     = "terbolous@gmail.com",
     url              = "https://github.com/terbolous/cloudstack-python-client",
     packages         = [ 'CloudStackClient' ],
