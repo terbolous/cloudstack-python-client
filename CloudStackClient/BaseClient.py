@@ -1,10 +1,12 @@
-import urllib2
-import urllib
-import json
-import hmac
 import base64
 import hashlib
+import hmac
+import json
 import re
+import urllib
+import urllib2
+from urllib import quote_plus
+
 
 class BaseClient(object):
     def __init__(self, api, apikey, secret):
@@ -13,16 +15,16 @@ class BaseClient(object):
         self.secret = secret
 
     def request(self, command, args):
-        args['apikey']   = self.apikey
-        args['command']  = command
+        args['apikey'] = self.apikey
+        args['command'] = command
         args['response'] = 'json'
 
-        params=[]
+        params = []
 
         keys = sorted(args.keys())
 
         for k in keys:
-            params.append(k + '=' + urllib.quote_plus(args[k]).replace("+", "%20"))
+            params.append(k + '=' + quote_plus(args[k]).replace("+", "%20"))
 
         query = '&'.join(params)
 
@@ -40,7 +42,8 @@ class BaseClient(object):
             error_msg = ''
             error_data = json.loads(error.read())
             if len(error_data) == 1:
-                error_msg = 'ERROR: %s - %s' % (error_data.keys()[0],error_data[error_data.keys()[0]]['errortext'])
+                error_msg = ('ERROR: %s - %s' % (error_data.keys()[0],
+                             error_data[error_data.keys()[0]]['errortext']))
             else:
                 error_msg = 'ERROR: Received multiple errors.'
             raise RuntimeError(error_msg)
@@ -55,16 +58,17 @@ class BaseClient(object):
         if propertyResponse == 'createautoscalepolicyresponse':
             propertyResponse = 'autoscalepolicyresponse'
 
-        if not propertyResponse in decoded:
+        if propertyResponse not in decoded:
             if 'errorresponse' in decoded:
-                raise RuntimeError("ERROR: " + decoded['errorresponse']['errortext'])
+                raise RuntimeError(("ERROR: " +
+                                    decoded['errorresponse']['errortext']))
             else:
                 raise RuntimeError("ERROR: Unable to parse the response")
 
         response = decoded[propertyResponse]
         result = re.compile(r"^list(\w+)s").match(command.lower())
 
-        if not result is None:
+        if result is not None:
             type = result.group(1)
 
             if type in response:
