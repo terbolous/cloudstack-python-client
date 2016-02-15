@@ -9,23 +9,25 @@ class Client(BaseClient):
 
         args - A dictionary. The following are options for keys:
             displaytext - the display text of the network offering
-            guestiptype - guest type of the network offering: Shared or Isolated
+            guestiptype - guest type of the network offering:Shared or Isolated
             name - the name of the network offering
             supportedservices - services supported by the network offering
-            traffictype - the traffic type for the network offering. Supported type in
-               current release is GUEST only
-            availability - the availability of network offering. Default value is
-               Optional
-            conservemode - true if the network offering is IP conserve mode enabled
+            traffictype - the traffic type for the network offering. Supported
+               type in current release is GUEST only
+            availability - the availability of network offering. Default value
+               is Optional
+            conservemode - true if the network offering is IP conserve mode
+               enabled
             networkrate - data transfer rate in megabits per second allowed
-            servicecapabilitylist - desired service capabilities as part of network
-               offering
-            serviceofferingid - the service offering ID used by virtual router provider
-            serviceproviderlist - provider to service mapping. If not specified, the
-               provider for the service will be mapped to the default provider on the physical
-               network
-            specifyipranges - true if network offering supports specifying ip ranges;
-               defaulted to false if not specified
+            servicecapabilitylist - desired service capabilities as part of
+               network offering
+            serviceofferingid - the service offering ID used by virtual router
+               provider
+            serviceproviderlist - provider to service mapping. If not specified
+               the provider for the service will be mapped to the default
+               provider on the physical network
+            specifyipranges - true if network offering supports specifying ip
+               ranges; defaulted to false if not specified
             specifyvlan - true if network offering supports vlans
             tags - the tags for the network offering.
         '''
@@ -47,9 +49,9 @@ class Client(BaseClient):
         Updates a network offering.
 
         args - A dictionary. The following are options for keys:
-            availability - the availability of network offering. Default value is
-               Required for Guest Virtual network offering; Optional for Guest Direct network
-               offering
+            availability - the availability of network offering. Default value
+               is Required for Guest Virtual network offering; Optional for
+               Guest Direct network offering
             displaytext - the display text of the network offering
             id - the id of the network offering
             name - the name of the network offering
@@ -76,31 +78,33 @@ class Client(BaseClient):
         Lists all available network offerings.
 
         args - A dictionary. The following are options for keys:
-            availability - the availability of network offering. Default value is
-               Required
+            availability - the availability of network offering. Default value
+               is Required
             displaytext - list network offerings by display text
-            guestiptype - list network offerings by guest type: Shared or Isolated
+            guestiptype - list network offerings by guest type: Shared or
+               Isolated
             id - list network offerings by id
-            isdefault - true if need to list only default network offerings. Default
-               value is false
+            isdefault - true if need to list only default network offerings.
+               Default value is false
             istagged - true if offering has tags specified
             keyword - List by keyword
             name - list network offerings by name
-            networkid - the ID of the network. Pass this in if you want to see the
-               available network offering that a network can be changed to.
+            networkid - the ID of the network. Pass this in if you want to see
+               the available network offering that a network can be changed to.
             page -
             pagesize -
-            sourcenatsupported - true if need to list only netwok offerings where source
-               nat is supported, false otherwise
-            specifyipranges - true if need to list only network offerings which support
-               specifying ip ranges
+            sourcenatsupported - true if need to list only netwok offerings
+               where source nat is supported, false otherwise
+            specifyipranges - true if need to list only network offerings which
+               support specifying ip ranges
             specifyvlan - the tags for the network offering.
             state - list network offerings by state
-            supportedservices - list network offerings supporting certain services
+            supportedservices - list network offerings supporting certain
+               services
             tags - list network offerings by tags
             traffictype - list by traffic type
-            zoneid - list netowrk offerings available for network creation in specific
-               zone
+            zoneid - list netowrk offerings available for network creation in
+               specific zone
             page - Pagination
         '''
 
@@ -1278,12 +1282,12 @@ class Client(BaseClient):
 
         args - A dictionary. The following are options for keys:
             id - traffic type id
-            kvmnetworklabel - The network name label of the physical device dedicated to
-               this traffic on a KVM host
-            vmwarenetworklabel - The network name label of the physical device dedicated
-               to this traffic on a VMware host
-            xennetworklabel - The network name label of the physical device dedicated to
-               this traffic on a XenServer host
+            kvmnetworklabel - The network name label of the physical device
+               dedicated to this traffic on a KVM host
+            vmwarenetworklabel - The network name label of the physical device
+               dedicated to this traffic on a VMware host
+            xennetworklabel - The network name label of the physical device
+               dedicated to this traffic on a XenServer host
         '''
         if 'id' not in args:
             raise RuntimeError("Missing required argument 'id'")
