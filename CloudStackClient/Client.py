@@ -27,15 +27,15 @@ class Client(BaseClient):
             specifyvlan - true if network offering supports vlans
             tags - the tags for the network offering.
         '''
-        if not 'displaytext' in args:
+        if 'displaytext' not in args:
             raise RuntimeError("Missing required argument 'displaytext'")
-        if not 'guestiptype' in args:
+        if 'guestiptype' not in args:
             raise RuntimeError("Missing required argument 'guestiptype'")
-        if not 'name' in args:
+        if 'name' not in args:
             raise RuntimeError("Missing required argument 'name'")
-        if not 'supportedservices' in args:
+        if 'supportedservices' not in args:
             raise RuntimeError("Missing required argument 'supportedservices'")
-        if not 'traffictype' in args:
+        if 'traffictype' not in args:
             raise RuntimeError("Missing required argument 'traffictype'")
 
         return self.request('createNetworkOffering', args)
@@ -66,7 +66,7 @@ class Client(BaseClient):
         args - A dictionary. The following are options for keys:
             id - the ID of the network offering
         '''
-        if not 'id' in args:
+        if 'id' not in args:
             raise RuntimeError("Missing required argument 'id'")
 
         return self.request('deleteNetworkOffering', args)
@@ -136,13 +136,13 @@ class Client(BaseClient):
                defaulted to allow.subdomain.network.access global config if not specified
             vlan - the ID or VID of the network
         '''
-        if not 'displaytext' in args:
+        if 'displaytext' not in args:
             raise RuntimeError("Missing required argument 'displaytext'")
-        if not 'name' in args:
+        if 'name' not in args:
             raise RuntimeError("Missing required argument 'name'")
-        if not 'networkofferingid' in args:
+        if 'networkofferingid' not in args:
             raise RuntimeError("Missing required argument 'networkofferingid'")
-        if not 'zoneid' in args:
+        if 'zoneid' not in args:
             raise RuntimeError("Missing required argument 'zoneid'")
 
         return self.request('createNetwork', args)
@@ -155,7 +155,7 @@ class Client(BaseClient):
         args - A dictionary. The following are options for keys:
             id - the ID of the network
         '''
-        if not 'id' in args:
+        if 'id' not in args:
             raise RuntimeError("Missing required argument 'id'")
 
         return self.request('deleteNetwork', args)
@@ -206,7 +206,7 @@ class Client(BaseClient):
             id - The id of the network to restart.
             cleanup - If cleanup old network elements
         '''
-        if not 'id' in args:
+        if 'id' not in args:
             raise RuntimeError("Missing required argument 'id'")
 
         return self.request('restartNetwork', args)
@@ -224,7 +224,7 @@ class Client(BaseClient):
             networkdomain - network domain
             networkofferingid - network offering ID
         '''
-        if not 'id' in args:
+        if 'id' not in args:
             raise RuntimeError("Missing required argument 'id'")
 
         return self.request('updateNetwork', args)
@@ -283,7 +283,7 @@ class Client(BaseClient):
         args - A dictionary. The following are options for keys:
             id - the ID of the Physical network
         '''
-        if not 'id' in args:
+        if 'id' not in args:
             raise RuntimeError("Missing required argument 'id'")
 
         return self.request('deletePhysicalNetwork', args)
@@ -317,7 +317,7 @@ class Client(BaseClient):
             tags - Tag the physical network
             vlan - the VLAN for the physical network
         '''
-        if not 'id' in args:
+        if 'id' not in args:
             raise RuntimeError("Missing required argument 'id'")
 
         return self.request('updatePhysicalNetwork', args)
@@ -351,9 +351,9 @@ class Client(BaseClient):
             servicelist - the list of services to be enabled for this physical network
                service provider
         '''
-        if not 'name' in args:
+        if 'name' not in args:
             raise RuntimeError("Missing required argument 'name'")
-        if not 'physicalnetworkid' in args:
+        if 'physicalnetworkid' not in args:
             raise RuntimeError("Missing required argument 'physicalnetworkid'")
 
         return self.request('addNetworkServiceProvider', args)
@@ -366,7 +366,7 @@ class Client(BaseClient):
         args - A dictionary. The following are options for keys:
             id - the ID of the network service provider
         '''
-        if not 'id' in args:
+        if 'id' not in args:
             raise RuntimeError("Missing required argument 'id'")
 
         return self.request('deleteNetworkServiceProvider', args)
@@ -399,7 +399,7 @@ class Client(BaseClient):
                service provider
             state - Enabled/Disabled/Shutdown the physical network service provider
         '''
-        if not 'id' in args:
+        if 'id' not in args:
             raise RuntimeError("Missing required argument 'id'")
 
         return self.request('updateNetworkServiceProvider', args)
@@ -420,13 +420,13 @@ class Client(BaseClient):
                Vmware as other hypervisors can directly reterive bridge from pyhsical network
                traffic type table
         '''
-        if not 'gateway' in args:
+        if 'gateway' not in args:
             raise RuntimeError("Missing required argument 'gateway'")
-        if not 'netmask' in args:
+        if 'netmask' not in args:
             raise RuntimeError("Missing required argument 'netmask'")
-        if not 'podid' in args:
+        if 'podid' not in args:
             raise RuntimeError("Missing required argument 'podid'")
-        if not 'startip' in args:
+        if 'startip' not in args:
             raise RuntimeError("Missing required argument 'startip'")
 
         return self.request('createStorageNetworkIpRange', args)
@@ -439,7 +439,7 @@ class Client(BaseClient):
         args - A dictionary. The following are options for keys:
             id - the uuid of the storage network ip range
         '''
-        if not 'id' in args:
+        if 'id' not in args:
             raise RuntimeError("Missing required argument 'id'")
 
         return self.request('deleteStorageNetworkIpRange', args)
@@ -477,7 +477,7 @@ class Client(BaseClient):
             startip - the beginning IP address
             vlan - Optional. the vlan the ip range sits on
         '''
-        if not 'id' in args:
+        if 'id' not in args:
             raise RuntimeError("Missing required argument 'id'")
 
         return self.request('updateStorageNetworkIpRange', args)
@@ -523,7 +523,7 @@ class Client(BaseClient):
         args - A dictionary. The following are options for keys:
             id - Id of network device to delete
         '''
-        if not 'id' in args:
+        if 'id' not in args:
             raise RuntimeError("Missing required argument 'id'")
 
         return self.request('deleteNetworkDevice', args)
@@ -540,7 +540,7 @@ class Client(BaseClient):
             pagesize -
             page - Pagination
         '''
-        if not 'lbdeviceid' in args:
+        if 'lbdeviceid' not in args:
             raise RuntimeError("Missing required argument 'lbdeviceid'")
 
         return self.request('listF5LoadBalancerNetworks', args)
@@ -557,7 +557,7 @@ class Client(BaseClient):
             pagesize -
             page - Pagination
         '''
-        if not 'lbdeviceid' in args:
+        if 'lbdeviceid' not in args:
             raise RuntimeError("Missing required argument 'lbdeviceid'")
 
         return self.request('listSrxFirewallNetworks', args)
@@ -574,7 +574,7 @@ class Client(BaseClient):
             pagesize -
             page - Pagination
         '''
-        if not 'lbdeviceid' in args:
+        if 'lbdeviceid' not in args:
             raise RuntimeError("Missing required argument 'lbdeviceid'")
 
         return self.request('listNetscalerLoadBalancerNetworks', args)
@@ -594,19 +594,19 @@ class Client(BaseClient):
             sourceipaddress - (optional) the source ip address the network traffic will be load balanced from
         '''
 
-        if not 'algorithm' in args:
+        if 'algorithm' not in args:
             raise RuntimeError("Missing required argument 'algorithm'")
-        if not 'name' in args:
+        if 'name' not in args:
             raise RuntimeError("Missing required argument 'name'")
-        if not 'instanceport' in args:
+        if 'instanceport' not in args:
             raise RuntimeError("Missing required argument 'instanceport'")
-        if not 'networkid' in args:
+        if 'networkid' not in args:
             raise RuntimeError("Missing required argument 'networkid'")
-        if not 'scheme' in args:
+        if 'scheme' not in args:
             raise RuntimeError("Missing required argument 'scheme'")
-        if not 'sourceipaddressnetworkid' in args:
+        if 'sourceipaddressnetworkid' not in args:
             raise RuntimeError("Missing required argument 'sourceipaddressnetworkid'")
-        if not 'sourceport' in args:
+        if 'sourceport' not in args:
             raise RuntimeError("Missing required argument 'sourceport'")
 
         return self.request('createLoadBalancer', args)
@@ -636,13 +636,13 @@ class Client(BaseClient):
             zoneid - zone where the load balancer is going to be created. This parameter
                is required when LB service provider is ElasticLoadBalancerVm
         '''
-        if not 'algorithm' in args:
+        if 'algorithm' not in args:
             raise RuntimeError("Missing required argument 'algorithm'")
-        if not 'name' in args:
+        if 'name' not in args:
             raise RuntimeError("Missing required argument 'name'")
-        if not 'privateport' in args:
+        if 'privateport' not in args:
             raise RuntimeError("Missing required argument 'privateport'")
-        if not 'publicport' in args:
+        if 'publicport' not in args:
             raise RuntimeError("Missing required argument 'publicport'")
 
         return self.request('createLoadBalancerRule', args)
@@ -655,7 +655,7 @@ class Client(BaseClient):
         args - A dictionary. The following are options for keys:
             id - the ID of the load balancer rule
         '''
-        if not 'id' in args:
+        if 'id' not in args:
             raise RuntimeError("Missing required argument 'id'")
 
         return self.request('deleteLoadBalancerRule', args)
@@ -671,9 +671,9 @@ class Client(BaseClient):
             virtualmachineids - the list of IDs of the virtual machines that are being
                removed from the load balancer rule (i.e. virtualMachineIds=1,2,3)
         '''
-        if not 'id' in args:
+        if 'id' not in args:
             raise RuntimeError("Missing required argument 'id'")
-        if not 'virtualmachineids' in args:
+        if 'virtualmachineids' not in args:
             raise RuntimeError("Missing required argument 'virtualmachineids'")
 
         return self.request('removeFromLoadBalancerRule', args)
@@ -688,9 +688,9 @@ class Client(BaseClient):
             virtualmachineids - the list of IDs of the virtual machine that are being
                assigned to the load balancer rule(i.e. virtualMachineIds=1,2,3)
         '''
-        if not 'id' in args:
+        if 'id' not in args:
             raise RuntimeError("Missing required argument 'id'")
-        if not 'virtualmachineids' in args:
+        if 'virtualmachineids' not in args:
             raise RuntimeError("Missing required argument 'virtualmachineids'")
 
         return self.request('assignToLoadBalancerRule', args)
@@ -709,11 +709,11 @@ class Client(BaseClient):
             param - param list. Example:
                param[0].name=cookiename&param[0].value=LBCookie
         '''
-        if not 'lbruleid' in args:
+        if 'lbruleid' not in args:
             raise RuntimeError("Missing required argument 'lbruleid'")
-        if not 'methodname' in args:
+        if 'methodname' not in args:
             raise RuntimeError("Missing required argument 'methodname'")
-        if not 'name' in args:
+        if 'name' not in args:
             raise RuntimeError("Missing required argument 'name'")
 
         return self.request('createLBStickinessPolicy', args)
@@ -726,7 +726,7 @@ class Client(BaseClient):
         args - A dictionary. The following are options for keys:
             id - the ID of the LB stickiness policy
         '''
-        if not 'id' in args:
+        if 'id' not in args:
             raise RuntimeError("Missing required argument 'id'")
 
         return self.request('deleteLBStickinessPolicy', args)
@@ -771,7 +771,7 @@ class Client(BaseClient):
             pagesize -
             page - Pagination
         '''
-        if not 'lbruleid' in args:
+        if 'lbruleid' not in args:
             raise RuntimeError("Missing required argument 'lbruleid'")
 
         return self.request('listLBStickinessPolicies', args)
@@ -790,7 +790,7 @@ class Client(BaseClient):
             pagesize -
             page - Pagination
         '''
-        if not 'id' in args:
+        if 'id' not in args:
             raise RuntimeError("Missing required argument 'id'")
 
         return self.request('listLoadBalancerRuleInstances', args)
@@ -806,7 +806,7 @@ class Client(BaseClient):
             description - the description of the load balancer rule
             name - the name of the load balancer rule
         '''
-        if not 'id' in args:
+        if 'id' not in args:
             raise RuntimeError("Missing required argument 'id'")
 
         return self.request('updateLoadBalancerRule', args)
@@ -823,15 +823,15 @@ class Client(BaseClient):
             url - URL of the F5 load balancer appliance.
             username - Credentials to reach F5 BigIP load balancer device
         '''
-        if not 'networkdevicetype' in args:
+        if 'networkdevicetype' not in args:
             raise RuntimeError("Missing required argument 'networkdevicetype'")
-        if not 'password' in args:
+        if 'password' not in args:
             raise RuntimeError("Missing required argument 'password'")
-        if not 'physicalnetworkid' in args:
+        if 'physicalnetworkid' not in args:
             raise RuntimeError("Missing required argument 'physicalnetworkid'")
-        if not 'url' in args:
+        if 'url' not in args:
             raise RuntimeError("Missing required argument 'url'")
-        if not 'username' in args:
+        if 'username' not in args:
             raise RuntimeError("Missing required argument 'username'")
 
         return self.request('addF5LoadBalancer', args)
@@ -846,7 +846,7 @@ class Client(BaseClient):
             lbdevicecapacity - capacity of the device, Capacity will be interpreted as
                number of networks device can handle
         '''
-        if not 'lbdeviceid' in args:
+        if 'lbdeviceid' not in args:
             raise RuntimeError("Missing required argument 'lbdeviceid'")
 
         return self.request('configureF5LoadBalancer', args)
@@ -859,7 +859,7 @@ class Client(BaseClient):
         args - A dictionary. The following are options for keys:
             lbdeviceid - netscaler load balancer device ID
         '''
-        if not 'lbdeviceid' in args:
+        if 'lbdeviceid' not in args:
             raise RuntimeError("Missing required argument 'lbdeviceid'")
 
         return self.request('deleteF5LoadBalancer', args)
@@ -893,15 +893,15 @@ class Client(BaseClient):
             url - URL of the netscaler load balancer appliance.
             username - Credentials to reach netscaler load balancer device
         '''
-        if not 'networkdevicetype' in args:
+        if 'networkdevicetype' not in args:
             raise RuntimeError("Missing required argument 'networkdevicetype'")
-        if not 'password' in args:
+        if 'password' not in args:
             raise RuntimeError("Missing required argument 'password'")
-        if not 'physicalnetworkid' in args:
+        if 'physicalnetworkid' not in args:
             raise RuntimeError("Missing required argument 'physicalnetworkid'")
-        if not 'url' in args:
+        if 'url' not in args:
             raise RuntimeError("Missing required argument 'url'")
-        if not 'username' in args:
+        if 'username' not in args:
             raise RuntimeError("Missing required argument 'username'")
 
         return self.request('addNetscalerLoadBalancer', args)
@@ -914,7 +914,7 @@ class Client(BaseClient):
         args - A dictionary. The following are options for keys:
             lbdeviceid - netscaler load balancer device ID
         '''
-        if not 'lbdeviceid' in args:
+        if 'lbdeviceid' not in args:
             raise RuntimeError("Missing required argument 'lbdeviceid'")
 
         return self.request('deleteNetscalerLoadBalancer', args)
@@ -933,7 +933,7 @@ class Client(BaseClient):
             lbdevicededicated - true if this netscaler device to dedicated for a
                account, false if the netscaler device will be shared by multiple accounts
         '''
-        if not 'lbdeviceid' in args:
+        if 'lbdeviceid' not in args:
             raise RuntimeError("Missing required argument 'lbdeviceid'")
 
         return self.request('configureNetscalerLoadBalancer', args)
@@ -1040,11 +1040,11 @@ class Client(BaseClient):
                adding it to the request. Currently only HTTP GET is supported. Using HTTP GET
                (via querystring), you can send up to 2KB of data after base64 encoding.
         '''
-        if not 'serviceofferingid' in args:
+        if 'serviceofferingid' not in args:
             raise RuntimeError("Missing required argument 'serviceofferingid'")
-        if not 'templateid' in args:
+        if 'templateid' not in args:
             raise RuntimeError("Missing required argument 'templateid'")
-        if not 'zoneid' in args:
+        if 'zoneid' not in args:
             raise RuntimeError("Missing required argument 'zoneid'")
 
         return self.request('deployVirtualMachine', args)
@@ -1058,7 +1058,7 @@ class Client(BaseClient):
         args - A dictionary. The following are options for keys:
             id - The ID of the virtual machine
         '''
-        if not 'id' in args:
+        if 'id' not in args:
             raise RuntimeError("Missing required argument 'id'")
 
         return self.request('destroyVirtualMachine', args)
@@ -1071,7 +1071,7 @@ class Client(BaseClient):
         args - A dictionary. The following are options for keys:
             id - The ID of the virtual machine
         '''
-        if not 'id' in args:
+        if 'id' not in args:
             raise RuntimeError("Missing required argument 'id'")
 
         return self.request('rebootVirtualMachine', args)
@@ -1084,7 +1084,7 @@ class Client(BaseClient):
         args - A dictionary. The following are options for keys:
             id - The ID of the virtual machine
         '''
-        if not 'id' in args:
+        if 'id' not in args:
             raise RuntimeError("Missing required argument 'id'")
 
         return self.request('startVirtualMachine', args)
@@ -1098,7 +1098,7 @@ class Client(BaseClient):
             id - The ID of the virtual machine
             forced - Force stop the VM.  The caller knows the VM is stopped.
         '''
-        if not 'id' in args:
+        if 'id' not in args:
             raise RuntimeError("Missing required argument 'id'")
 
         return self.request('stopVirtualMachine', args)
@@ -1113,7 +1113,7 @@ class Client(BaseClient):
         args - A dictionary. The following are options for keys:
             id - The ID of the virtual machine
         '''
-        if not 'id' in args:
+        if 'id' not in args:
             raise RuntimeError("Missing required argument 'id'")
 
         return self.request('resetPasswordForVirtualMachine', args)
@@ -1128,9 +1128,9 @@ class Client(BaseClient):
             id - The ID of the virtual machine
             serviceofferingid - the service offering ID to apply to the virtual machine
         '''
-        if not 'id' in args:
+        if 'id' not in args:
             raise RuntimeError("Missing required argument 'id'")
-        if not 'serviceofferingid' in args:
+        if 'serviceofferingid' not in args:
             raise RuntimeError("Missing required argument 'serviceofferingid'")
 
         return self.request('changeServiceForVirtualMachine', args)
@@ -1152,7 +1152,7 @@ class Client(BaseClient):
                adding it to the request. Currently only HTTP GET is supported. Using HTTP GET
                (via querystring), you can send up to 2KB of data after base64 encoding.
         '''
-        if not 'id' in args:
+        if 'id' not in args:
             raise RuntimeError("Missing required argument 'id'")
 
         return self.request('updateVirtualMachine', args)
@@ -1165,7 +1165,7 @@ class Client(BaseClient):
         args - A dictionary. The following are options for keys:
             id - The ID of the virtual machine
         '''
-        if not 'id' in args:
+        if 'id' not in args:
             raise RuntimeError("Missing required argument 'id'")
 
         return self.request('recoverVirtualMachine', args)
@@ -1216,7 +1216,7 @@ class Client(BaseClient):
         args - A dictionary. The following are options for keys:
             id - The ID of the virtual machine
         '''
-        if not 'id' in args:
+        if 'id' not in args:
             raise RuntimeError("Missing required argument 'id'")
 
         return self.request('getVMPassword', args)
@@ -1234,7 +1234,7 @@ class Client(BaseClient):
             storageid - Destination storage pool ID to migrate VM volumes to. Required
                for migrating the root disk volume
         '''
-        if not 'virtualmachineid' in args:
+        if 'virtualmachineid' not in args:
             raise RuntimeError("Missing required argument 'virtualmachineid'")
 
         return self.request('migrateVirtualMachine', args)
