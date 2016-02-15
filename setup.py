@@ -28,6 +28,7 @@ try:
 except ImportError:
     from distutils.core import setup
 
+
 def read(*paths):
     """Build a file path from *paths* and return the contents."""
     with open(os.path.join(*paths), 'r') as f:
@@ -35,7 +36,7 @@ def read(*paths):
 
 setup(
     name             = 'CloudStackClient',
-    version          = '0.1.3',
+    version          = '0.1.4',
     description      = "CloudStack API Client",
     long_description = (read('README.md') + '\r\n' +
                         read('HISTORY.rst') + '\r\n' +
@@ -44,7 +45,7 @@ setup(
     author           = "Erik Weber",
     author_email     = "terbolous@gmail.com",
     url              = "https://github.com/terbolous/cloudstack-python-client",
-    packages         = [ 'CloudStackClient' ],
+    packages         = ['CloudStackClient'],
     license          = 'MIT',
     platforms        = 'Posix; MacOS X; Windows',
 )
